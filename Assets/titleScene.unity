@@ -351,10 +351,10 @@ RectTransform:
   m_Father: {fileID: 556206922}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -397, y: 139.5}
-  m_SizeDelta: {x: 51.5, y: 51.9}
+  m_AnchorMin: {x: 0.040000003, y: 0.78300005}
+  m_AnchorMax: {x: 0.09617865, y: 0.89800006}
+  m_AnchoredPosition: {x: 0, y: 2}
+  m_SizeDelta: {x: 1.5, y: 4.899994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &114710951
 MonoBehaviour:
@@ -730,7 +730,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Button
+  m_Text: 
 --- !u!222 &504860022
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -798,7 +798,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -944,7 +944,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -1018,7 +1018,7 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 4
+    m_Alignment: 3
     m_AlignByGeometry: 1
     m_RichText: 1
     m_HorizontalOverflow: 0
