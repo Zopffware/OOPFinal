@@ -1,0 +1,59 @@
+C#
+* the wayward child of Microsoft from a java sperm donation who is constantly trying to be lured into linux's van with mono candy
+* He is child of C++ and Java and gets his food and resources from one company
+* an ex-teacher, former colleague of Java; quit his teaching gig a decade ago and is now head of department at a large corporation. He's a
+  helpful person, and very skilled in a lot of things; his explanations can be lengthy though, and he's a bit too proud of his current
+  employer and their corporate identity.
+
+C++
+* the oldie but the goodie
+* likes controlling everything (your memory included)
+* Giant Technological-Advanced Mutant which is at same time is cyborg, monster, alien, human, dog, cat, wolf, deer, bear, chameleon, and
+  snake
+* Originally a craftsman, this ADHD-ridden maniac tried to learn every craft simultaneously, and he'll take any odd job you throw at him,
+  from mopping the floor to building a skyscraper. Talking to him is kind of a challenge though, because he talks fast, and he'll present
+  you with all sorts of choices that you never thought existed, let alone were relevant.
+* https://www.youtube.com/watch?v=eXiwYUCe_bY
+
+HTML
+* He isn't human,he is alien,but for some reason everyone considers him as "Human"
+
+JavaScript
+* the young kid that nobody takes seriously till the 3rd movie in the series, and he finally gets a storyline of its own, demonstrating he
+  matured (but still can't do math)
+* Javascript would be a street-wise teenager who lurks in the web-covered side streets; helping the occasional passerby make sense of the
+  road signs and stopping them from taking one way streets in the wrong direction. He has two dogs called HTML and CSS that he and his
+  beautiful girlfriend (named JQuery) groom and train to do tricks with one another.
+  In all, he's not that understood or respected by older members of society that he takes advice from occasionally. They infantalise him
+  and say he has no 'class', but he gets by just fine! He's no longer a gimmicky child. Instead, an adult that prays to ECMA three times a
+  day. His cousin Jscript passed away and now his other cousin Actionscript is on his deathbed too. :(
+* Former liberal arts major with great prospects, born into a family of bohemian artists, but forced to drop out of art school and into
+  making a living as a shop window decorator due to circumstances. She's still dreaming of that art career, but being the only window
+  decorator in town, and hindered by her inability to do two things simultaneously, she's stuck in that job, although recently she has been
+  offered a few gigs as an interior designer which didn't go badly at all. The pay is good, and she's popular, so that art career will
+  probably never get off the ground. Her drinking might become a problem at some point, but so far she seems rather stable.
+* A tangled mess of tubes
+  * A tangled mess of tubes and jQuery
+
+Java
+* PHP's the wanton woman who'll sleep with anyone, but if you know her tricks you can get her to do what you want.
+  * No, that's Java
+* He treats everything as objects,absolutely everything. He does something once and shows off that one thing everywhere. Before, he was
+  leaving so much garbage that Universe would eventually crash,but he stopped being a jerk and leaving garbage.
+* a retired teacher, ever so patient, very experienced, and knows a lot about a lot of things. She's quite protective, but somewhat out of
+  touch with the modern world. Living with Java can be frustrating, because her explanations are lengthy, and for something as simple as
+  making a cup of tea, Java uses a tea bag factory, a cup manager, and a heat provider adapter, and she insists that visitors subscribe to
+  some sort of event just to tell when the water is boiling. Convincing her of new ways is tiresome and doesn't always go well.
+
+Python
+* Wingmanning? No probs. Another round of beers? Sure thing. Old lady struggeling with her groceries? He'll help her. Who is this man, you
+  ask? Python. Good old Python.
+* the rockstar that has a PhD and is also a sensitive man
+* that super handy neighbor who has a tool for everything that makes work around the house super easy
+  * Python is more of the Ned Flanders neighbor.
+* the guy who doesn't do the fanciest work, but he's got a million ways to get shit done
+* It is guy which is lazy as heck and imports everything from other people.
+* Spoiled trust fund kiddie and self-proclaimed artist. Has all sorts of high-and-mighty talks about explicit being better than implicit,
+  but "borrows" your stuff without asking. When confronted about the matter, he'll say something like "look, we're all consenting adults
+  here", or "you see it's easier to ask forgiveness than permission". And forgive him you do, because other than that, he's really a fun
+  guy to hang out with. Just don't trust him with your car keys.
