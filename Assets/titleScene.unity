@@ -1043,7 +1043,7 @@ GameObject:
   - component: {fileID: 1749711043}
   - component: {fileID: 1749711042}
   m_Layer: 0
-  m_Name: SettingsButton
+  m_Name: LoadButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
