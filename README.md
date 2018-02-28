@@ -28,20 +28,21 @@ Each requirement has a priority level of [1], [2], or [3].
 3. Optional requirements that will be completed if time allows.
 
 * UI
-  * Dating Sim
+  * Dating Sim[1]
     * Mainly text box with answer buttons that you can click
   * RPG[3]
     * At the end of the dating sim the character that you conquer/choose will become your partner to defeat a single boss
     * The abilities that you have are based on the partner
     * No lvl, no store, no dungeon.
     * If you lose the fight same bad ending from base game
-  * Store
+  * Store[2]
     * Can buy various items (if player has enough currency),
     * Items include : gifts(increase love points), flowers(increase love points), food(used in RPG obtained through the game).
-  * Inventory[1]
-    * Buttons that call the item 
-    * User can add  to inventory as well as remove
-    * Show sell value of each item
+  * Inventory
+    * User can add  to inventory as well as remove[1]
+    * Show sell value of each item[2]
+    * Consumables (gifts, flowers, food etc)[1]
+    * RPG Equipment (weapons armor etc)[3]
   * Menu[1]
     * Main menu (New game, load Game, exit to desktop)
     * Playing menu(save game, exit to main, exit to desktop)
@@ -52,20 +53,15 @@ Each requirement has a priority level of [1], [2], or [3].
   * Location[3]
   * Time [3]
   * country[3]
-* Art[2]
+* Art
   * Background of dating sites, school?, home, etc.[3]
   * Characters(see below)
     * Gender-swapped mode[3] (Changes gender of characters)
   * End scene 
     * Main character kissing girl/guy[1]
     * Main character kissing a computer screen with a tear running down cheek.[3] 
-* Gameplay[1]
-  * Scene Parsing
-  * Inventory
-    * Consumables[1]
-      * RPG inventory
-        * Weapons/Moves[3](Affect damage)
-        * Armors[3](Affects how much damage you take)
+* Gameplay
+  * Scene Parsing[1]
   * Currency[1]
     * BitCoin(Buy Items)
   * Random Drops/Events[2]
@@ -77,33 +73,42 @@ Each requirement has a priority level of [1], [2], or [3].
   * Fights[3]
     * Turn based you have hp and mana
     * Can use potions and food to heal health or mana
-  * Characters:
+  * Characters:[1]
     * Java 
     * C#
     * C++
     * Python
     * Html & JavaScript (Twins inseparable)
+    * (all include name, love points required, favorite gifts etc)
 * Saving/Loading Data[1]
   * Game progress(Love points with each character, items in inventory, notes, location, setting, etc.)
 * Easter Eggs[3]
 
 ## Part 2: Objective Coverage
-* The Game will have a GUI
-* It will implement interfaces for items you can get throughout the game
+* The Game will have a GUI 
+  * It will implement interfaces for items you can get throughout the game
+  * Buttons that will allow the player to choose their own path
+  * Mini Games for the player to play allowing them to earn love
+  * Character images to show the change in expression of characters
 * Items will be abstract so they have bases that are similar but different uses, also is inheritance, and polymorphism.
 * We will have a notepad for the character to write notes - File I/O & Data Persistence
-* We will have a save/load - Exceptions & Handling
+* We will have a save/load - Exceptions & Handling 
 * HashMap for character poses.
 * ArrayList for the inventory.
 * MVC is covered, we have models controllers and views.
+  * Models for characters and items
+  * Controllers for the love point mechanics
+    * Gifts increase love points which compare to the love point requirement for love
+  * Views to display characters, items, backgrounds, etc
 * 2D array list to display store items
 * Recursion used in a mini game
 * Observer that pays attention to when money changes or love increases/decreases
 * Consumable items override the use() method in the Consumable interface.
 * Overloading using two constructors for the player
 
+
 ## Part 3: Basic Design
-![Test Image](datingSimDiagram.png)
+![UML Diagram](datingSimDiagram.png)
 
 ## Part 4: Project Plan
 1. By Monday the 26th start coding.
