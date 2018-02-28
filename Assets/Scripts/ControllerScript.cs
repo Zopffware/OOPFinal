@@ -7,7 +7,7 @@ public class ControllerScript : MonoBehaviour
 {
     public Transform PlayerGender;
     public Transform PlayerPreferance;
-    InputField NameField;
+    public InputField NameField;
     public string sex;
     public string preferedSex;
     public string playerName;
