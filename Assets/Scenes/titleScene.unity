@@ -430,9 +430,19 @@ Prefab:
       propertyPath: m_SizeDelta.y
       value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114144016218102808, guid: 35b921ee8847dc640a1d66e706c04d56,
+        type: 2}
+      propertyPath: menuPrefab
+      value: 
+      objectReference: {fileID: 1382953199}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 35b921ee8847dc640a1d66e706c04d56, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1382953199 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1479128901291976, guid: 35b921ee8847dc640a1d66e706c04d56,
+    type: 2}
+  m_PrefabInternal: {fileID: 778564847}
 --- !u!1 &1900725046
 GameObject:
   m_ObjectHideFlags: 0
