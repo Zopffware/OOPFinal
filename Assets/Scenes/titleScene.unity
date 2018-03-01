@@ -123,7 +123,7 @@ GameObject:
   - component: {fileID: 104498943}
   - component: {fileID: 104498945}
   - component: {fileID: 104498944}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 114710952}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 11500000, guid: 2e4e65ca7041c4b47bd290dc6e1c1c66, type: 3}
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &114710952
@@ -512,7 +523,7 @@ Prefab:
     - target: {fileID: 224234374294547354, guid: 35b921ee8847dc640a1d66e706c04d56,
         type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224289314420098642, guid: 35b921ee8847dc640a1d66e706c04d56,
         type: 2}
@@ -522,7 +533,7 @@ Prefab:
     - target: {fileID: 224215536040961864, guid: 35b921ee8847dc640a1d66e706c04d56,
         type: 2}
       propertyPath: m_RootOrder
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 82807096629712252, guid: 35b921ee8847dc640a1d66e706c04d56,
         type: 2}
@@ -553,7 +564,7 @@ GameObject:
   - component: {fileID: 1057906476}
   - component: {fileID: 1057906475}
   - component: {fileID: 1057906474}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -646,7 +657,7 @@ GameObject:
   - component: {fileID: 1117234260}
   - component: {fileID: 1117234262}
   - component: {fileID: 1117234261}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Text (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -720,7 +731,7 @@ GameObject:
   - component: {fileID: 1313679861}
   - component: {fileID: 1313679863}
   - component: {fileID: 1313679862}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -946,7 +957,7 @@ GameObject:
   - component: {fileID: 2078762475}
   - component: {fileID: 2078762474}
   - component: {fileID: 2078762473}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1066,7 @@ GameObject:
   - component: {fileID: 2139538787}
   - component: {fileID: 2139538789}
   - component: {fileID: 2139538788}
-  m_Layer: 0
+  m_Layer: 5
   m_Name: Panel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
