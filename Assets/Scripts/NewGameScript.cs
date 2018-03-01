@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class NewGameScript : MonoBehaviour {
     public Button NewGame;
-    public GameObject infoPrefab;
+    public GameObject infoPrefab, menuPrefab;
 	// Use this for initialization
 	void Start () {
         Button btn = NewGame.GetComponent<Button>();
@@ -19,8 +19,8 @@ public class NewGameScript : MonoBehaviour {
 	}
 
     void GameStart () {
+        Destroy(menuPrefab);
         Vector3 pos = new Vector3(0, 0, 0);
         Instantiate(infoPrefab, pos, Quaternion.identity);
-
     }
 }

@@ -484,6 +484,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewGame: {fileID: 114188193176854288}
+  infoPrefab: {fileID: 0}
+  menuPrefab: {fileID: 0}
 --- !u!114 &114146115194389204
 MonoBehaviour:
   m_ObjectHideFlags: 1
