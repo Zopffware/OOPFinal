@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -44,6 +45,28 @@ using UnityEngine;
             public static readonly int Match3Score = 60;
             public static readonly int SubsequentMatchScore = 1000;
         }
+    }
 
+ public class Shape : MonoBehaviour
+    {
+       public BonusType Bonus { get; set; }
+       public int Column { get; set; }
+        public int Row { get; set; }
 
+        public string Type { get; set; }
+
+        public Shape()
+    {
+        Bonus = BonusType.None;
+    }
+
+        public bool IsSameType(Shape otherShape)
+    {
+        if (otherShape == null || !(otherShape is Shape))
+        {
+            throw new ArgumentException("otherShape");
+        }
+
+        return string.Compare(this.Type, (otherShape as Shape).Type) == 0;
+    }
     }
