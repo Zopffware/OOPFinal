@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114283549695084048}
   - component: {fileID: 114483501763181890}
   m_Layer: 5
-  m_Name: Home_Boy
+  m_Name: HomeBase_Boy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

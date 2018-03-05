@@ -40,7 +40,7 @@ GameObject:
   - component: {fileID: 114305428546431484}
   - component: {fileID: 114869050629502774}
   m_Layer: 5
-  m_Name: Diner
+  m_Name: DinerBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

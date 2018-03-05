@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 114832140972005482}
   - component: {fileID: 114429610870646408}
   m_Layer: 5
-  m_Name: Library
+  m_Name: LibraryBase
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
