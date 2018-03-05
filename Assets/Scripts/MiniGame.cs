@@ -69,4 +69,49 @@ using UnityEngine;
 
         return string.Compare(this.Type, (otherShape as Shape).Type) == 0;
     }
+
+    public void Assign(string type, int row, int column)
+    {
+
+        if (string.IsNullOrEmpty(type))
+            throw new ArgumentException("type");
+
+        Column = column;
+        Row = row;
+        Type = type;
     }
+
+    public static void SwapColumnRow(Shape a, Shape b)
+    {
+        int temp = a.Row;
+        a.Row = b.Row;
+        b.Row = temp;
+
+        temp = a.Column;
+        a.Column = b.Column;
+        b.Column = temp;
+    }
+
+    }
+//add sound maybe?
+//add hints?
+
+    public class AlteredCandyInfo
+{
+    private List<GameObject> newCandy { get; set; }
+    public int MaxDistance { get; set; }
+
+    public void AddCandy(GameObject go)
+    {
+        if (!newCandy.Contains(go))
+            newCandy.Add(go);
+    }
+
+    public AlteredCandyInfo()
+    {
+        newCandy = new List<GameObject>();
+    }
+
+}
+
+
