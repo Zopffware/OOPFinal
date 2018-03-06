@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-using static BonusTypeUtilities;
+//using static BonusTypeUtilities;
 
 [System.Flags]
     public enum BonusType
@@ -297,9 +297,10 @@ public static class BonusTypeUtilities
             {
                 foreach (var go in matches)
                 {
-                    if (BonusTypeUtilities.ContainsDestroyWholeRowColumn
+                  /*  if (BonusTypeUtilities.ContainsDestroyWholeRowColumn
                         (go.GetComponent<Shape>().Bonus))
                         return true;
+                        */
                 }
             }
 

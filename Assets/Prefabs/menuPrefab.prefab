@@ -129,7 +129,7 @@ GameObject:
   - component: {fileID: 114078954702600972}
   - component: {fileID: 114197452500066794}
   m_Layer: 0
-  m_Name: menoPrefab
+  m_Name: menuPrefab
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

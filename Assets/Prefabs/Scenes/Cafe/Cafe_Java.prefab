@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114131787339614538}
   - component: {fileID: 114979788065115490}
   m_Layer: 5
-  m_Name: Caffe_Java
+  m_Name: Cafe_Java
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -181,7 +181,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: c1571ea57c516cb4986e09b3aff21029, type: 3}
+  m_Sprite: {fileID: 21300000, guid: cca317730f442344b875d4483f56b00b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
