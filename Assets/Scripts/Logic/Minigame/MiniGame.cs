@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-//using static BonusTypeUtilities;
+using static BonusTypeUtilities;
 
 [System.Flags]
     public enum BonusType
@@ -15,7 +15,7 @@ using UnityEngine;
 public static class BonusTypeUtilities
 {
 
-    public static bool ContainsDestroyWholeColumn(BonusType bt)
+    public static bool ContainsDestroyWholeRowColumn(BonusType bt)
     {
         return (bt & BonusType.DestroyWholeRowColumn)
             == BonusType.DestroyWholeRowColumn;
@@ -120,10 +120,26 @@ public static class BonusTypeUtilities
     {
         private List<GameObject> matchedCandies;
 
+        public IEnumerable<GameObject> MatchedCandy
+        {
+            get
+            {
+                return matchedCandies.Distinct();
+            }
+        }
+
         public void AddObject(GameObject go)
         {
             if (!matchedCandies.Contains(go))
                 matchedCandies.Add(go);
+        }
+
+        public void AddObjectRange(IEnumerable<GameObject> gos)
+        {
+            foreach (var item in gos)
+            {
+                AddObject(item);
+            }
         }
 
         public MatchesInfo()
@@ -297,17 +313,108 @@ public static class BonusTypeUtilities
             {
                 foreach (var go in matches)
                 {
-                  /*  if (BonusTypeUtilities.ContainsDestroyWholeRowColumn
+                    if (BonusTypeUtilities.ContainsDestroyWholeRowColumn
                         (go.GetComponent<Shape>().Bonus))
                         return true;
-                        */
+                        
                 }
             }
 
             return false;
         }
+
+        public MatchesInfo GetMatches(GameObject go)
+        {
+            MatchesInfo matchesInfo = new MatchesInfo();
+
+            var horizontalMatches = GetMatchesHorizontally(go);
+            if (ContainsDestroyRowColumnBonus(horizontalMatches))
+            {
+                horizontalMatches = GetEntireRow(go);
+                if (!BonusTypeUtilities.ContainsDestroyWholeRowColumn(matchesInfo.BonusesContained))
+                    matchesInfo.BonusesContained |= BonusType.DestroyWholeRowColumn;
+            }
+            matchesInfo.AddObjectRange(horizontalMatches);
+
+            var verticalMatches = GetMatchesVertically(go);
+            if (ContainsDestroyRowColumnBonus(verticalMatches))
+            {
+                verticalMatches = GetEntireColumn(go);
+                if (!BonusTypeUtilities.ContainsDestroyWholeRowColumn(matchesInfo.BonusesContained))
+                    matchesInfo.BonusesContained |= BonusType.DestroyWholeRowColumn;
+            }
+            matchesInfo.AddObjectRange(verticalMatches);
+
+            return matchesInfo;
+        }
+
+        public IEnumerable<GameObject> GetMatches(IEnumerable<GameObject> gos)
+        {
+            List<GameObject> matches = new List<GameObject>();
+            foreach (var go in gos)
+            {
+                matches.AddRange(GetMatches(go).MatchedCandy);
+            }
+            return matches.Distinct();
+        }
+
+        public void Remove(GameObject item)
+        {
+            shapes[item.GetComponent<Shape>().Row, item.GetComponent<Shape>().Column] = null;
+        }
+
+        public AlteredCandyInfo Collapse(IEnumerable<int> columns)
+        {
+            AlteredCandyInfo collapseInfo = new AlteredCandyInfo();
+
+            ///search in every column
+            foreach (var column in columns)
+            {
+                //begin from bottom row
+                for (int row = 0; row < Constants.Rows - 1; row++)
+                {
+                    //if you find a null item
+                    if (shapes[row, column] == null)
+                    {
+                        //start searching for the first non-null
+                        for (int row2 = row + 1; row2 < Constants.Rows; row2++)
+                        {                         //if you find one, bring it down (i.e. replace it with the null you found)                         if (shapes[row2, column] != null)                         {                             shapes[row, column] = shapes[row2, column];                             shapes[row2, column] = null;                             //calculate the biggest distance                             if (row2 - row > collapseInfo.MaxDistance)
+                            collapseInfo.MaxDistance = row2 - row;
+
+                            //assign new row and column (name does not change)
+                            shapes[row, column].GetComponent<Shape>().Row = row;
+                            shapes[row, column].GetComponent<Shape>().Column = column;
+
+                            collapseInfo.AddCandy(shapes[row, column]);
+                            break;
+                        }
+                    }
+                }
+            }
+            return collapseInfo;
+        }
+
+        public IEnumerable<ShapeInfo> GetEmptyItemsOnColumn(int column)
+        {
+            List<ShapeInfo> emptyItems = new List<ShapeInfo>();
+            for (int row = 0; row < Constants.Rows; row++)
+            {
+                if (shapes[row, column] == null)
+                    emptyItems.Add(new ShapeInfo() { Row = row, Column = column });
+            }
+            return emptyItems;
+        }
+
+        public class ShapeInfo
+        {
+            public int Column { get; set; }
+            public int Row { get; set; }
+        }
+
+
     }
 }
+
 
 
 
