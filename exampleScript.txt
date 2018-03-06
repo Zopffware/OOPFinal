@@ -19,6 +19,7 @@ prompt
 	addpoints|JS|5
 	[end]
 	text|choice2
+	[end]
 	text|choice3
 	addpoints|JS|-5
 	[end]
