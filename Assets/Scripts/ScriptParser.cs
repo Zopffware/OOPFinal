@@ -85,6 +85,32 @@ public class ScriptParser {
         return commands;
     }
 
+    public static void executeCommand(ICommand command) {
+        if (command.GetType().Equals(typeof(SpeakerCommand))) {
+            SpeakerCommand speakerCommand = (SpeakerCommand)command;
+            //TODO: change speaker
+        } else if (command.GetType().Equals(typeof(TextCommand))) {
+            TextCommand textCommand = (TextCommand)command;
+            //TODO: display text
+        } else if (command.GetType().Equals(typeof(PortraitCommand))) {
+            PortraitCommand portraitCommand = (PortraitCommand)command;
+            //TODO: set portraits
+        } else if (command.GetType().Equals(typeof(BackgroundCommand))) {
+            BackgroundCommand backgroundCommand = (BackgroundCommand)command;
+            //TODO: set background
+        } else if (command.GetType().Equals(typeof(LinkCommand))) {
+            LinkCommand linkCommand = (LinkCommand)command;
+            //TODO: load script, parse, and execute
+        } else if (command.GetType().Equals(typeof(AddPointsCommand))) {
+            AddPointsCommand addPointsCommand = (AddPointsCommand)command;
+            //TODO: add points to a particular character
+            //GameControl.control.lovePoints += addPointsCommand.points;
+        } else if (command.GetType().Equals(typeof(PromptCommand))) {
+            PromptCommand promptCommand = (PromptCommand)command;
+            //TODO: prompt user for choice, execute script according to choice
+        }
+    }
+
 	/*public static void oldParse(string script) {
         bool textBlock = false;
         bool prompt = false;

@@ -1,16 +1,16 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections;
 
-public class Character : MonoBehaviour {
+[System.Serializable]
+public class Character
+{
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public int lovePoints;
+    public string name;
+
+    public Character()
+    {
+        this.lovePoints = 0;
+        this.name = "";
+    }
 }
