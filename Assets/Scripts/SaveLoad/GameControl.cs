@@ -15,7 +15,6 @@ public class GameControl : MonoBehaviour {
     public int CSLovePoints;
     public int CPPLovePoints;
     public int PYLovePoints;
-    public int money;
     public int day;
     public int hour;
 
