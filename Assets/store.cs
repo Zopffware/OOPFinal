@@ -4,13 +4,8 @@ using UnityEngine;
 
 public class store : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+	void cocoMaker()
+    {
+
+    }
 }
