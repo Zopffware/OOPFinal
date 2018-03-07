@@ -25,10 +25,6 @@ public class ShapesManager : MonoBehaviour
     public GameObject[] ExplosionPrefabs;
     public GameObject[] BonusPrefabs;
 
-    private IEnumerator CheckPotentialMatchesCoroutine;
-    private IEnumerator AnimatePotentialMatchesCoroutine;
-
-    IEnumerable<GameObject> potentialMatches;
 
     public SoundManager soundManager;
     void Awake()
@@ -43,7 +39,7 @@ public class ShapesManager : MonoBehaviour
 
         InitializeCandyAndSpawnPositions();
 
-        StartCheckForPotentialMatches();
+       // StartCheckForPotentialMatches();
     }
 
     /// <summary>
@@ -212,7 +208,7 @@ public class ShapesManager : MonoBehaviour
                 {
 
                     //user did a hit, no need to show him hints 
-                    StopCheckForPotentialMatches();
+                    //StopCheckForPotentialMatches();
 
                     //if the two shapes are diagonally aligned (different row and column), just return
                     if (!Utilities.AreVerticalOrHorizontalNeighbors(hitGo.GetComponent<Shape>(),
@@ -343,7 +339,7 @@ public class ShapesManager : MonoBehaviour
         }
 
         state = GameState.None;
-        StartCheckForPotentialMatches();
+       // StartCheckForPotentialMatches();
     }
 
     /// <summary>
@@ -477,30 +473,30 @@ public class ShapesManager : MonoBehaviour
     /// <summary>
     /// Starts the coroutines, keeping a reference to stop later
     /// </summary>
-    private void StartCheckForPotentialMatches()
+   /* private void StartCheckForPotentialMatches()
     {
         StopCheckForPotentialMatches();
         //get a reference to stop it later
         CheckPotentialMatchesCoroutine = CheckPotentialMatches();
         StartCoroutine(CheckPotentialMatchesCoroutine);
-    }
+    }*/
 
     /// <summary>
     /// Stops the coroutines
     /// </summary>
-    private void StopCheckForPotentialMatches()
+    /*private void StopCheckForPotentialMatches()
     {
         if (AnimatePotentialMatchesCoroutine != null)
             StopCoroutine(AnimatePotentialMatchesCoroutine);
         if (CheckPotentialMatchesCoroutine != null)
             StopCoroutine(CheckPotentialMatchesCoroutine);
         ResetOpacityOnPotentialMatches();
-    }
+    }*/
 
     /// <summary>
     /// Resets the opacity on potential matches (probably user dragged something?)
     /// </summary>
-    private void ResetOpacityOnPotentialMatches()
+   /* private void ResetOpacityOnPotentialMatches()
     {
         if (potentialMatches != null)
             foreach (var item in potentialMatches)
@@ -511,13 +507,13 @@ public class ShapesManager : MonoBehaviour
                 c.a = 1.0f;
                 item.GetComponent<SpriteRenderer>().color = c;
             }
-    }
+    }*/
 
     /// <summary>
     /// Finds potential matches
     /// </summary>
     /// <returns></returns>
-    private IEnumerator CheckPotentialMatches()
+    /*private IEnumerator CheckPotentialMatches()
     {
         yield return new WaitForSeconds(Constants.WaitBeforePotentialMatchesCheck);
         potentialMatches = Utilities.GetPotentialMatches(shapes);
@@ -531,7 +527,7 @@ public class ShapesManager : MonoBehaviour
                 yield return new WaitForSeconds(Constants.WaitBeforePotentialMatchesCheck);
             }
         }
-    }
+    }*/
 
     /// <summary>
     /// Gets a specific candy or Bonus based on the premade level information.
