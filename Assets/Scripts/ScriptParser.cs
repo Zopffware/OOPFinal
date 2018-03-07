@@ -13,7 +13,7 @@ public class ScriptParser {
         string currentChoice = null;
         string currentConsequences = "";
 
-        foreach (string line in script.Split('\n')) {
+        foreach (string line in script.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries)) {
             string[] lineData = line.Trim().Split('|');
             if (textBlock) {
                 if (lineData[0].Equals("[end]")) {
@@ -39,7 +39,7 @@ public class ScriptParser {
                         currentConsequences = "";
                         currentChoice = null;
                     } else {
-                        currentConsequences += line + '\n';
+                        currentConsequences += line + "\r\n";
                     }
                 }
             } else {
@@ -64,7 +64,7 @@ public class ScriptParser {
                         textBlock = true;
                         break;
                     case Command.PORTRAIT:
-                        commands.Add(new PortraitCommand(lineData[1], lineData[2], Int16.Parse(lineData[3])));
+                        commands.Add(new PortraitCommand(lineData[1], lineData[2], float.Parse(lineData[3])));
                         break;
                     case Command.BACKGROUND:
                         commands.Add(new BackgroundCommand(lineData[1]));
@@ -73,7 +73,7 @@ public class ScriptParser {
                         commands.Add(new LinkCommand(lineData[1]));
                         break;
                     case Command.ADDPOINTS:
-                        commands.Add(new AddPointsCommand(lineData[1], Int16.Parse(lineData[3])));
+                        commands.Add(new AddPointsCommand(lineData[1], Int16.Parse(lineData[2])));
                         break;
                     case Command.PROMPT:
                         prompt = true;
@@ -89,6 +89,7 @@ public class ScriptParser {
         if (command.GetType().Equals(typeof(SpeakerCommand))) {
             SpeakerCommand speakerCommand = (SpeakerCommand)command;
             //TODO: change speaker
+            speaker = speakerCommand.speaker;
         } else if (command.GetType().Equals(typeof(TextCommand))) {
             TextCommand textCommand = (TextCommand)command;
             //TODO: display text
