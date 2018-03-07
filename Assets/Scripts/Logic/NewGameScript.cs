@@ -10,6 +10,7 @@ public class NewGameScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Button btn = NewGame.GetComponent<Button>();
+        
         btn.onClick.AddListener(GameStart);
 	}
 	
