@@ -6,10 +6,13 @@ public class PromptCommand : ICommand {
     public Dictionary<string, List<ICommand>>.KeyCollection getChoices() {
         return choices.Keys;
     }
+    public void addChoice(string choice) {
+        choices.Add(choice, new List<ICommand>());
+    }
     public ICommand[] getConsequences(string choice) {
         return choices[choice].ToArray();
     }
-    public void addConsequence(string choice, ICommand consequence) {
-        choices[choice].Add(consequence);
+    public void addConsequences(string choice, List<ICommand> consequences) {
+        choices.Add(choice, consequences);
     }
 }

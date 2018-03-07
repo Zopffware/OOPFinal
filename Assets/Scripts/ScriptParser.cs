@@ -5,9 +5,87 @@ using System.Text.RegularExpressions;
 public class ScriptParser {
     public static string speaker = "";
 
+    public static List<ICommand> parse(string script) {
+        List<ICommand> commands = new List<ICommand>();
+        bool textBlock = false;
+        bool prompt = false;
+        PromptCommand currentPrompt = null;
+        string currentChoice = null;
+        string currentConsequences = "";
 
+        foreach (string line in script.Split('\n')) {
+            string[] lineData = line.Trim().Split('|');
+            if (textBlock) {
+                if (lineData[0].Equals("[end]")) {
+                    textBlock = false;
+                } else {
+                    commands.Add(new TextCommand(lineData[0]));
+                }
+            } else if (prompt) {
+                if (currentPrompt == null) {
+                    currentPrompt = new PromptCommand();
+                }
+                if (currentChoice == null) {
+                    if (lineData[0].Equals("[end]")) {
+                        commands.Add(currentPrompt);
+                        currentPrompt = null;
+                        prompt = false;
+                    } else {
+                        currentChoice = lineData[0];
+                    }
+                } else {
+                    if (lineData[0].Equals("[end]")) {
+                        currentPrompt.addConsequences(currentChoice, parse(currentConsequences));
+                        currentConsequences = "";
+                        currentChoice = null;
+                    } else {
+                        currentConsequences += line + '\n';
+                    }
+                }
+            } else {
+                Command command;
+                try {
+                    command = (Command)(Enum.Parse(typeof(Command), lineData[0].ToUpper()));
+                } catch (ArgumentException e) {
+                    throw new ArgumentException("Invalid command: " + lineData[0]);
+                }
+                switch (command) {
+                    case Command.SPEAKER:
+                        commands.Add(new SpeakerCommand(lineData[1]));
+                        break;
+                    case Command.TEXT:
+                        commands.Add(new TextCommand(lineData[1]));
+                        break;
+                    case Command.SPEAKERTEXT:
+                        commands.Add(new SpeakerCommand(lineData[1]));
+                        commands.Add(new TextCommand(lineData[2]));
+                        break;
+                    case Command.TEXTBLOCK:
+                        textBlock = true;
+                        break;
+                    case Command.PORTRAIT:
+                        commands.Add(new PortraitCommand(lineData[1], lineData[2], Int16.Parse(lineData[3])));
+                        break;
+                    case Command.BACKGROUND:
+                        commands.Add(new BackgroundCommand(lineData[1]));
+                        break;
+                    case Command.LINK:
+                        commands.Add(new LinkCommand(lineData[1]));
+                        break;
+                    case Command.ADDPOINTS:
+                        commands.Add(new AddPointsCommand(lineData[1], Int16.Parse(lineData[3])));
+                        break;
+                    case Command.PROMPT:
+                        prompt = true;
+                        break;
+                }
+            }
+        }
 
-	public static void oldParse(string script) {
+        return commands;
+    }
+
+	/*public static void oldParse(string script) {
         bool textBlock = false;
         bool prompt = false;
         int promptCount = 0;
@@ -80,7 +158,7 @@ public class ScriptParser {
                 }
             }
         }
-	}
+	}*/
 	/*public static void displayText(string character, string text) {
 		string displayText;
 		if (character.Equals("Python")) {
