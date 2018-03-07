@@ -13,29 +13,29 @@ public static class Utilities
     /// </summary>
     /// <param name="potentialMatches"></param>
     /// <returns></returns>
-    public static IEnumerator AnimatePotentialMatches(IEnumerable<GameObject> potentialMatches)
-    {
-        for (float i = 1f; i >= 0.3f; i -= 0.1f)
-        {
-            foreach (var item in potentialMatches)
-            {
-                Color c = item.GetComponent<SpriteRenderer>().color;
-                c.a = i;
-                item.GetComponent<SpriteRenderer>().color = c;
-            }
-            yield return new WaitForSeconds(Constants.OpacityAnimationFrameDelay);
-        }
-        for (float i = 0.3f; i <= 1f; i += 0.1f)
-        {
-            foreach (var item in potentialMatches)
-            {
-                Color c = item.GetComponent<SpriteRenderer>().color;
-                c.a = i;
-                item.GetComponent<SpriteRenderer>().color = c;
-            }
-            yield return new WaitForSeconds(Constants.OpacityAnimationFrameDelay);
-        }
-    }
+    //public static IEnumerator AnimatePotentialMatches(IEnumerable<GameObject> potentialMatches)
+    //{
+        //for (float i = 1f; i >= 0.3f; i -= 0.1f)
+        //{
+            //foreach (var item in potentialMatches)
+            //{
+                //Color c = item.GetComponent<SpriteRenderer>().color;
+                //c.a = i;
+              //  item.GetComponent<SpriteRenderer>().color = c;
+            //}
+          //  yield return new WaitForSeconds(Constants.OpacityAnimationFrameDelay);
+        //}
+        //for (float i = 0.3f; i <= 1f; i += 0.1f)
+        //{
+            //foreach (var item in potentialMatches)
+            //{
+                //Color c = item.GetComponent<SpriteRenderer>().color;
+              //  c.a = i;
+             //   item.GetComponent<SpriteRenderer>().color = c;
+           // }
+         //   yield return new WaitForSeconds(Constants.OpacityAnimationFrameDelay);
+     //   }
+   // }
 
     /// <summary>
     /// Checks if a shape is next to another one

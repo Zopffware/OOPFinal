@@ -43,7 +43,7 @@ public class ShapesManager : MonoBehaviour
 
         InitializeCandyAndSpawnPositions();
 
-        StartCheckForPotentialMatches();
+        //StartCheckForPotentialMatches();
     }
 
     /// <summary>
@@ -343,7 +343,7 @@ public class ShapesManager : MonoBehaviour
         }
 
         state = GameState.None;
-        StartCheckForPotentialMatches();
+        //StartCheckForPotentialMatches();
     }
 
     /// <summary>
@@ -477,13 +477,13 @@ public class ShapesManager : MonoBehaviour
     /// <summary>
     /// Starts the coroutines, keeping a reference to stop later
     /// </summary>
-    private void StartCheckForPotentialMatches()
-    {
-        StopCheckForPotentialMatches();
+   // private void StartCheckForPotentialMatches()
+   // {
+       // StopCheckForPotentialMatches();
         //get a reference to stop it later
-        CheckPotentialMatchesCoroutine = CheckPotentialMatches();
-        StartCoroutine(CheckPotentialMatchesCoroutine);
-    }
+       // CheckPotentialMatchesCoroutine = CheckPotentialMatches();
+      //  StartCoroutine(CheckPotentialMatchesCoroutine);
+   // }
 
     /// <summary>
     /// Stops the coroutines
@@ -517,21 +517,21 @@ public class ShapesManager : MonoBehaviour
     /// Finds potential matches
     /// </summary>
     /// <returns></returns>
-    private IEnumerator CheckPotentialMatches()
-    {
-        yield return new WaitForSeconds(Constants.WaitBeforePotentialMatchesCheck);
-        potentialMatches = Utilities.GetPotentialMatches(shapes);
-        if (potentialMatches != null)
-        {
-            while (true)
-            {
+    //private IEnumerator CheckPotentialMatches()
+    //{
+        //yield return new WaitForSeconds(Constants.WaitBeforePotentialMatchesCheck);
+        //potentialMatches = Utilities.GetPotentialMatches(shapes);
+        //if (potentialMatches != null)
+        //{
+            //while (true)
+            //{
 
-                AnimatePotentialMatchesCoroutine = Utilities.AnimatePotentialMatches(potentialMatches);
-                StartCoroutine(AnimatePotentialMatchesCoroutine);
-                yield return new WaitForSeconds(Constants.WaitBeforePotentialMatchesCheck);
-            }
-        }
-    }
+             //   AnimatePotentialMatchesCoroutine = Utilities.AnimatePotentialMatches(potentialMatches);
+           //     StartCoroutine(AnimatePotentialMatchesCoroutine);
+         //       yield return new WaitForSeconds(Constants.WaitBeforePotentialMatchesCheck);
+       //     }
+     //   }
+   // }
 
     /// <summary>
     /// Gets a specific candy or Bonus based on the premade level information.
