@@ -1,33 +1,16 @@
-﻿using UnityEngine;
-using System.Collections;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
-[System.Serializable]
-public class Game
-{
+public class NewBehaviourScript : MonoBehaviour {
 
-    public static Game current;
-    public Character CS;
-    public Character CPP;
-    public Character Java;
-    public Character Py;
-    public Character HTML;
-    public Character JC;
-    public int lovePoints;
-    public int day;
-    public int hour;
-
-
-    public Game()
-    {
-        CS = new Character();
-        CPP = new Character();
-        Java = new Character();
-        Py = new Character();
-        HTML = new Character();
-        JC = new Character();
-        lovePoints = 0;
-        day = 0;
-        hour = 0;
-    }
-
+	// Use this for initialization
+	void Start () {
+		
+	}
+	
+	// Update is called once per frame
+	void Update () {
+		
+	}
 }
