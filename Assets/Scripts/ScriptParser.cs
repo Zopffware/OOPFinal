@@ -5,23 +5,9 @@ using System.Text.RegularExpressions;
 public class ScriptParser {
     public static string speaker = "";
 
-    struct DialogueLine {
-		public string name;
-		public string content;
-		//public int pose;
-		public string position;
-		public string[] options;
 
-		public DialogueLine(string name, string content, int pose, string position) {
-			this.name = name;
-			this.content = content;
-			//this.pose = pose;
-			this.position = position;
-			this.options = new string[0];
-		}
-	}
 
-	public static void parse(string script) {
+	public static void oldParse(string script) {
         bool textBlock = false;
         bool prompt = false;
         int promptCount = 0;
@@ -32,11 +18,12 @@ public class ScriptParser {
         foreach (string line in script.Split('\n')) {
             string[] lineData = line.Trim().Split('|');
             if (!textBlock && !prompt) {
-                /*try {*/
-                    Command command = (Command)(Enum.Parse(typeof(Command), lineData[0].ToUpper()));
-                /*} catch (Exception e) {
-                    
-                }*/
+                Command command;
+                try {
+                    command = (Command)(Enum.Parse(typeof(Command), lineData[0].ToUpper()));
+                } catch (ArgumentException e) {
+                    throw new ArgumentException("Invalid command: " + lineData[0]);
+                }
                 switch (command) {
                     case Command.TEXT:
                         displayText(speaker, lineData[1]);
@@ -57,7 +44,7 @@ public class ScriptParser {
                         prompts = new List<string>();
                         break;
                     case Command.LINK:
-                        parse(getFile(lineData[1]));
+                        oldParse(getFile(lineData[1]));
                         break;
                     case Command.PORTRAIT:
                         displayPortrait(characters.get(lineData[1]).getPose(lineData[2]), lineData[3]);
@@ -80,7 +67,7 @@ public class ScriptParser {
                     if (promptCount == 0) {
                         promptSelection = promptUserChoice(prompts);
                     } else if (promptSelection == promptCount) {
-                        parse(promptCode.TrimEnd('\n'));
+                        oldParse(promptCode.TrimEnd('\n'));
                     }
                     promptCount++;
                     if (promptCount > prompts.Count) {
