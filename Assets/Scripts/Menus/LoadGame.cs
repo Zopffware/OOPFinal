@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class LoadGame : MonoBehaviour {
     
 	// Use this for initialization
@@ -13,7 +14,7 @@ public class LoadGame : MonoBehaviour {
 	
 	void load()
     {
-        GameObject.GameControl.control.Load();
+        GameControl.control.Load();
     }
 
 }
