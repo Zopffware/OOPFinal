@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Text.RegularExpressions;
 
 public class ScriptParser {
-    public static string speaker = "";
+    private static string speaker = "";
+    public static GameControl currentPrefab, nextPrefab;
+    private static int commandIndex = 0;
+    private static List<ICommand> currentScript;
 
     public static List<ICommand> parse(string script) {
         List<ICommand> commands = new List<ICommand>();
@@ -86,29 +90,76 @@ public class ScriptParser {
     }
 
     public static void executeCommand(ICommand command) {
-        if (command.GetType().Equals(typeof(SpeakerCommand))) {
+        if (command.GetType().Equals(typeof(SpeakerCommand))) {                                     //speaker
             SpeakerCommand speakerCommand = (SpeakerCommand)command;
             //TODO: change speaker
-        } else if (command.GetType().Equals(typeof(TextCommand))) {
+            throw new NotImplementedException();
+
+        } else if (command.GetType().Equals(typeof(TextCommand))) {                                 //text
             TextCommand textCommand = (TextCommand)command;
             //TODO: display text
-        } else if (command.GetType().Equals(typeof(PortraitCommand))) {
+            throw new NotImplementedException();
+
+        } else if (command.GetType().Equals(typeof(PortraitCommand))) {                             //portrait
             PortraitCommand portraitCommand = (PortraitCommand)command;
             //TODO: set portraits
-        } else if (command.GetType().Equals(typeof(BackgroundCommand))) {
+            throw new NotImplementedException();
+
+        } else if (command.GetType().Equals(typeof(BackgroundCommand))) {                           //background
             BackgroundCommand backgroundCommand = (BackgroundCommand)command;
             //TODO: set background
-        } else if (command.GetType().Equals(typeof(LinkCommand))) {
+            
+            throw new NotImplementedException();
+
+        } else if (command.GetType().Equals(typeof(LinkCommand))) {                                 //link
             LinkCommand linkCommand = (LinkCommand)command;
-            //TODO: load script, parse, and execute
-        } else if (command.GetType().Equals(typeof(AddPointsCommand))) {
+            readScript(linkCommand.fileName);
+
+        } else if (command.GetType().Equals(typeof(AddPointsCommand))) {                            //addpoints
             AddPointsCommand addPointsCommand = (AddPointsCommand)command;
-            //TODO: add points to a particular character
-            //GameControl.control.lovePoints += addPointsCommand.points;
-        } else if (command.GetType().Equals(typeof(PromptCommand))) {
+            switch (addPointsCommand.character) {
+                case "Java":
+                    GameControl.control.JavaLovePoints += addPointsCommand.points;
+                    break;
+                case "JS":
+                    GameControl.control.JSLovePoints += addPointsCommand.points;
+                    break;
+                case "C++":
+                    GameControl.control.CPPLovePoints += addPointsCommand.points;
+                    break;
+                case "C#":
+                    GameControl.control.CSLovePoints += addPointsCommand.points;
+                    break;
+                case "HTML":
+                    GameControl.control.HTMLLovePoints += addPointsCommand.points;
+                    break;
+                case "Python":
+                    GameControl.control.PYLovePoints += addPointsCommand.points;
+                    break;
+            }
+
+        } else if (command.GetType().Equals(typeof(PromptCommand))) {                               //prompt
             PromptCommand promptCommand = (PromptCommand)command;
             //TODO: prompt user for choice, execute script according to choice
+            throw new NotImplementedException();
         }
+    }
+
+    public static void readScript(string filename) {
+        try {
+            using (StreamReader sr = new StreamReader(filename)) {
+                currentScript = parse(sr.ReadToEnd());
+                commandIndex = 0;
+            }
+        } catch (Exception e) {
+            Console.WriteLine("The file could not be read:");
+            Console.WriteLine(e.Message);
+        }
+    }
+
+    public static void advanceScript() {
+        executeCommand(currentScript[commandIndex]);
+        commandIndex++;
     }
 
 	/*public static void oldParse(string script) {
