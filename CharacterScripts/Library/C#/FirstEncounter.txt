@@ -1,0 +1,16 @@
+speaker|C#
+text|What do you mean you can't help me?! You aren't doing anything! I asked for one simple thing...|
+prompt
+	Could I be of any help?
+		text|If you can find this book for me you'd be a hero. *Few minutes pass* Oh, thank you!
+		addpoints|C#|1
+	[end]
+	I bet I can help you. *wink*
+		text|Um, sure. Look for this book. *she walks out*
+	[end]
+	Obviously you should be abe to help yourself.
+		text|Obviously you should stay out of other people's business.
+		addpoints|JS|-1
+	[end]
+[end]
+link|\School\HTML&JavaScript\FirstEncounter.txt

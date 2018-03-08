@@ -1,0 +1,20 @@
+speaker|HTML
+text|I can't believe you!|
+speakertext|JavaScript|Me?! I can't believe you!
+speakertext|Both|Hey! You! Come here! Which one of us is right?!
+prompt
+	Uh, you? *right*
+		speakertext|HTML|Ha! Told you so! Thank you!
+		addpoints|HTML|1
+	[end]
+	Uh, you? *left*
+		speakertext|JavaScript|Ha! Told you so! Thanks dude.
+		addpoints|JavaScript|1
+	[end]
+	I think you're both pretty. 
+		speakertext|Both|Ugh. Yeah, thanks.
+		addpoints|HTML|-1
+		addpoints|JavaScript|-1
+	[end]
+[end]
+link|\Park\C++\FirstEncounter.txt

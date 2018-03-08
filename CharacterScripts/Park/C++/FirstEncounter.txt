@@ -1,0 +1,16 @@
+speaker|C++
+text|Hey, cute boy! Come take a picture of me for my Insta!|
+prompt
+	Uh, yeah. Sure.
+		text|Thanks, babe! *proceeds to pose while you take pictures* Oooo, you're good with a camera! 
+		addpoints|JS|1
+	[end]
+	Anything for you, princess. 
+		text|Hmph. Just take the picture.  
+	[end]
+	Isn't that kinda weird?
+		text|Um, no? Fine, don't talk to a pretty girl. 
+		addpoints|JS|-1
+	[end]
+[end]
+link|otherScript.txt
