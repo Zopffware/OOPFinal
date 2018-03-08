@@ -20,8 +20,8 @@ public class NewGameScript : MonoBehaviour {
 	}
 
     void GameStart () {
-        Destroy(menuPrefab);
         Vector3 pos = new Vector3(0, 0, 0);
         Instantiate(infoPrefab, pos, Quaternion.identity);
+        Destroy(menuPrefab);
     }
 }
