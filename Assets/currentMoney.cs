@@ -17,7 +17,7 @@ public class currentMoney : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         int cm = GameControl.control.money;
-        string myString = cm.ToString();
-        GameObject.Find("currentMoney").GetComponentInChildren<Text>().text=myString;
+       countText.text = "ByteCoin: " + cm.ToString();
+            
 	}
 }

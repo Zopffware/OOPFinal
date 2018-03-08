@@ -19,6 +19,7 @@ public class GameControl : MonoBehaviour
     public int money;
     public int day;
     public int hour;
+    
 
     void Awake()
     {
@@ -57,7 +58,13 @@ public class GameControl : MonoBehaviour
         bf.Serialize(file, data);
         file.Close();
     }
-
+    public void changeAmount(int minusMon)
+    {
+        if (money>=minusMon) {
+            money = money - minusMon;
+        }
+        
+    }
     public void Load()
     {
         if (File.Exists(Application.persistentDataPath + "/playerInfo.dat"))
