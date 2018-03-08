@@ -7,14 +7,15 @@ using UnityEngine.UI;
 public class NewGameScript : MonoBehaviour {
     public Button NewGame;
     public GameObject infoPrefab, menuPrefab;
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         Button btn = NewGame.GetComponent<Button>();
         btn.onClick.AddListener(GameStart);
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update () {
 		
 	}
 
