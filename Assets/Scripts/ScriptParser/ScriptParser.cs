@@ -147,7 +147,8 @@ public class ScriptParser {
 
     public static void readScript(string filename) {
         try {
-            using (StreamReader sr = new StreamReader(filename)) {
+            using (StreamReader sr = new StreamReader((filename.StartsWith("C:\\") || filename.StartsWith("/"))
+                    ? filename : "CharacterScripts\\" + filename)) {
                 currentScript = parse(sr.ReadToEnd());
                 commandIndex = 0;
             }
