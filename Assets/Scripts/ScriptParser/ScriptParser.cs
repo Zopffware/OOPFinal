@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
+using UnityEngine;
+using UnityEngine.UI;
 
 public class ScriptParser {
     private static string speaker = "";
@@ -17,7 +19,7 @@ public class ScriptParser {
         string currentChoice = null;
         string currentConsequences = "";
 
-        foreach (string line in script.Split('\n')) {
+        foreach (string line in script.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries)) {
             string[] lineData = line.Trim().Split('|');
             if (textBlock) {
                 if (lineData[0].Equals("[end]")) {
@@ -43,7 +45,7 @@ public class ScriptParser {
                         currentConsequences = "";
                         currentChoice = null;
                     } else {
-                        currentConsequences += line + '\n';
+                        currentConsequences += line + "\r\n";
                     }
                 }
             } else {
@@ -68,7 +70,7 @@ public class ScriptParser {
                         textBlock = true;
                         break;
                     case Command.PORTRAIT:
-                        commands.Add(new PortraitCommand(lineData[1], lineData[2], Int16.Parse(lineData[3])));
+                        commands.Add(new PortraitCommand(lineData[1], lineData[2], float.Parse(lineData[3])));
                         break;
                     case Command.BACKGROUND:
                         commands.Add(new BackgroundCommand(lineData[1]));
@@ -77,7 +79,7 @@ public class ScriptParser {
                         commands.Add(new LinkCommand(lineData[1]));
                         break;
                     case Command.ADDPOINTS:
-                        commands.Add(new AddPointsCommand(lineData[1], Int16.Parse(lineData[3])));
+                        commands.Add(new AddPointsCommand(lineData[1], Int16.Parse(lineData[2])));
                         break;
                     case Command.PROMPT:
                         prompt = true;
@@ -94,26 +96,30 @@ public class ScriptParser {
             SpeakerCommand speakerCommand = (SpeakerCommand)command;
             //TODO: change speaker
             throw new NotImplementedException();
+            speaker = speakerCommand.speaker;
+            advanceScript();
 
         } else if (command.GetType().Equals(typeof(TextCommand))) {                                 //text
             TextCommand textCommand = (TextCommand)command;
-            //TODO: display text
-            throw new NotImplementedException();
+            GameObject.Find("Dialogue").GetComponentInChildren<Text>().text = textCommand.text;
 
         } else if (command.GetType().Equals(typeof(PortraitCommand))) {                             //portrait
             PortraitCommand portraitCommand = (PortraitCommand)command;
             //TODO: set portraits
             throw new NotImplementedException();
+            advanceScript();
 
         } else if (command.GetType().Equals(typeof(BackgroundCommand))) {                           //background
             BackgroundCommand backgroundCommand = (BackgroundCommand)command;
             //TODO: set background
             
             throw new NotImplementedException();
+            advanceScript();
 
         } else if (command.GetType().Equals(typeof(LinkCommand))) {                                 //link
             LinkCommand linkCommand = (LinkCommand)command;
             readScript(linkCommand.fileName);
+            advanceScript();
 
         } else if (command.GetType().Equals(typeof(AddPointsCommand))) {                            //addpoints
             AddPointsCommand addPointsCommand = (AddPointsCommand)command;
@@ -137,6 +143,7 @@ public class ScriptParser {
                     GameControl.control.PYLovePoints += addPointsCommand.points;
                     break;
             }
+            advanceScript();
 
         } else if (command.GetType().Equals(typeof(PromptCommand))) {                               //prompt
             PromptCommand promptCommand = (PromptCommand)command;
