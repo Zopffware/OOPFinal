@@ -12,6 +12,6 @@ public class MakeItemObject {
         AssetDatabase.SaveAssets();
         EditorUtility.FocusProjectWindow();
         Selection.activeObject = asset;
-     }
-	
+    }
+
 }
