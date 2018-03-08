@@ -5,9 +5,6 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
-public class GameObject : MonoBehaviour
-{
-
 public class GameControl : MonoBehaviour
 {
 
@@ -99,5 +96,5 @@ class PlayerData
 
 //GameControl.control.money += x;
 
-}
+
 
