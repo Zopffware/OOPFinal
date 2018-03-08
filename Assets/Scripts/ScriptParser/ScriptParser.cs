@@ -94,9 +94,8 @@ public class ScriptParser {
     public static void executeCommand(ICommand command) {
         if (command.GetType().Equals(typeof(SpeakerCommand))) {                                     //speaker
             SpeakerCommand speakerCommand = (SpeakerCommand)command;
-            //TODO: change speaker
-            throw new NotImplementedException();
             speaker = speakerCommand.speaker;
+            GameObject.Find("Speaker").GetComponentInChildren<Text>().text = speaker;
             advanceScript();
 
         } else if (command.GetType().Equals(typeof(TextCommand))) {                                 //text
