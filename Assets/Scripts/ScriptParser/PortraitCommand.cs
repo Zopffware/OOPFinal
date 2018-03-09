@@ -1,11 +1,17 @@
-﻿public class PortraitCommand : ICommand {
-    public readonly string character;
-    public readonly string poseName;
-    public readonly float x;
+﻿using System;
 
-    public PortraitCommand(string character, string poseName,  float x) {
+public class PortraitCommand : ICommand {
+    public readonly string character;
+   // public readonly string poseName;
+    public readonly char side;
+
+    public PortraitCommand(string character,/* string poseName,*/ char side) {
         this.character = character;
-        this.poseName = poseName;
-        this.x = x;
+        //this.poseName = poseName;
+        if (side == 'L' || side == 'R') {
+            this.side = side;
+        } else {
+            throw new ArgumentException("Side must be 'L' or 'R'");
+        }
     }
 }
