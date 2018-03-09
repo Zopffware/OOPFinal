@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class ScriptParser {
     private static string speaker = "";
     public static GameControl currentPrefab, nextPrefab;
-    private static int commandIndex = GameControl.control.commandIndex;
+    private static int commandIndex = 0;
 
     private static List<ICommand> currentScript;
 
@@ -95,8 +95,13 @@ public class ScriptParser {
     public static void executeCommand(ICommand command) {
         if (command.GetType().Equals(typeof(SpeakerCommand))) {                                     //speaker
             SpeakerCommand speakerCommand = (SpeakerCommand)command;
-            speaker = speakerCommand.speaker;
-            GameObject.Find("Speaker").GetComponentInChildren<Text>().text = speaker;
+            Text speaker = GameObject.Find("Speaker").GetComponentInChildren<Text>();
+            if (speakerCommand.speaker.Equals("")) {
+                speaker.color = Color.clear;
+            } else {
+                speaker.color = Color.white;
+                speaker.text = speakerCommand.speaker;
+            }
             advanceScript();
 
         } else if (command.GetType().Equals(typeof(TextCommand))) {                                 //text
@@ -105,15 +110,20 @@ public class ScriptParser {
 
         } else if (command.GetType().Equals(typeof(PortraitCommand))) {                             //portrait
             PortraitCommand portraitCommand = (PortraitCommand)command;
-            GameObject.Find(portraitCommand.side == 'L' ? "LeftPortrait" : "RightPortrait").GetComponentInChildren<Image>().sprite =
-                Resources.Load<Sprite>("Characters\\" + portraitCommand.character + "Girl");
+            Image portrait = GameObject.Find(portraitCommand.side == 'L' ? "LeftPortrait" : "RightPortrait").GetComponentInChildren<Image>();
+            Debug.Log(portrait);
+            if (portraitCommand.character.Equals("")) {
+                portrait.color = Color.clear;
+            } else {
+                portrait.color = Color.white;
+                portrait.sprite = Resources.Load<Sprite>("Characters\\" + portraitCommand.character + "Girl");
+            }
             advanceScript();
 
         } else if (command.GetType().Equals(typeof(BackgroundCommand))) {                           //background
             BackgroundCommand backgroundCommand = (BackgroundCommand)command;
-            //TODO: set background
-            
-            throw new NotImplementedException();
+            GameObject.Find("Background").GetComponentInChildren<Image>().sprite =
+                    Resources.Load<Sprite>("Backgrounds\\" + backgroundCommand.name);
             advanceScript();
 
         } else if (command.GetType().Equals(typeof(LinkCommand))) {                                 //link
@@ -160,14 +170,17 @@ public class ScriptParser {
                 commandIndex = 0;
             }
         } catch (Exception e) {
-            Console.WriteLine("The file could not be read:");
-            Console.WriteLine(e.Message);
+            Debug.Log("The file could not be read:");
+            Debug.Log(e.Message);
         }
     }
 
     public static void advanceScript() {
-        executeCommand(currentScript[commandIndex]);
-        commandIndex++;
+        if (commandIndex >= currentScript.Count - 1) {
+            Debug.Log("The script has finished.");
+        } else {
+            executeCommand(currentScript[commandIndex++]);
+        }
     }
 
 	/*public static void oldParse(string script) {
