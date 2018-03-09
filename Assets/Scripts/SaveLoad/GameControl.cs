@@ -5,11 +5,14 @@ using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
 
+
 public class GameControl : MonoBehaviour
 {
 
     public static GameControl control;
+    public GameObject menu;
 
+    public bool pause = false;
     public int JSLovePoints;
     public int HTMLLovePoints;
     public int JavaLovePoints;
@@ -23,6 +26,7 @@ public class GameControl : MonoBehaviour
 
     void Awake()
     {
+        
         if (control == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -87,6 +91,25 @@ public class GameControl : MonoBehaviour
             money = money - minusMon;
         }
 
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown("escape"))
+        {
+            if (pause == true)
+            {
+                Time.timeScale = 0.0f;
+                pause = false;
+                menu.SetActive(true);
+            }
+            else
+            {
+                Time.timeScale = 1.0f;
+                pause = true;
+                menu.SetActive(false);
+            }
+        }
     }
 }
 
