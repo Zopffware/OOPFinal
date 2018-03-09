@@ -1,7 +1,7 @@
 ﻿public class BackgroundCommand : ICommand {
     public readonly string name;
 
-    public BackgroundCommand(string fileName) {
+    public BackgroundCommand(string name) {
         this.name = name;
     }
 }

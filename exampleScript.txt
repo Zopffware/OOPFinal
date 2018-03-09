@@ -1,3 +1,5 @@
+background|Diner
+portrait|Java|R
 speaker|Michael
 text|This is a line of text!|You can make comments by specifying more arguments than neccessary.
 speakertext|Jeff|You can also set the speaker and text at the same time.
@@ -9,7 +11,7 @@ textblock
 	[end]
 speakertext|Jeff|Close a textBlock with [end] on a new line.
 speakertext|Michael|This is pretty cool, isn't it?
-portrait|JS|somePose|0.5
+portrait||L
 prompt
 	choice1
 		text|choice1
