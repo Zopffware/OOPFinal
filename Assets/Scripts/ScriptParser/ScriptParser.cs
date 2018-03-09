@@ -71,7 +71,7 @@ public class ScriptParser {
                         textBlock = true;
                         break;
                     case Command.PORTRAIT:
-                        commands.Add(new PortraitCommand(lineData[1], lineData[2], float.Parse(lineData[3])));
+                        commands.Add(new PortraitCommand(lineData[1], lineData[2][0]/*, lineData[3][0]*/));
                         break;
                     case Command.BACKGROUND:
                         commands.Add(new BackgroundCommand(lineData[1]));
@@ -105,8 +105,8 @@ public class ScriptParser {
 
         } else if (command.GetType().Equals(typeof(PortraitCommand))) {                             //portrait
             PortraitCommand portraitCommand = (PortraitCommand)command;
-            //TODO: set portraits
-            throw new NotImplementedException();
+            GameObject.Find(portraitCommand.side == 'L' ? "LeftPortrait" : "RightPortrait").GetComponentInChildren<Image>().sprite =
+                Resources.Load<Sprite>("Characters\\" + portraitCommand.character + "Girl");
             advanceScript();
 
         } else if (command.GetType().Equals(typeof(BackgroundCommand))) {                           //background
