@@ -8,7 +8,8 @@ using UnityEngine.UI;
 public class ScriptParser {
     private static string speaker = "";
     public static GameControl currentPrefab, nextPrefab;
-    private static int commandIndex = 0;
+    private static int commandIndex = GameControl.control.commandIndex;
+
     private static List<ICommand> currentScript;
 
     public static List<ICommand> parse(string script) {
