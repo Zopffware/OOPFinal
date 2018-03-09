@@ -106,14 +106,13 @@ public class ScriptParser {
         } else if (command.GetType().Equals(typeof(PortraitCommand))) {                             //portrait
             PortraitCommand portraitCommand = (PortraitCommand)command;
             GameObject.Find(portraitCommand.side == 'L' ? "LeftPortrait" : "RightPortrait").GetComponentInChildren<Image>().sprite =
-                Resources.Load<Sprite>("Characters\\" + portraitCommand.character + "Girl");
+                    Resources.Load<Sprite>("Characters\\" + portraitCommand.character + "Girl");
             advanceScript();
 
         } else if (command.GetType().Equals(typeof(BackgroundCommand))) {                           //background
             BackgroundCommand backgroundCommand = (BackgroundCommand)command;
-            //TODO: set background
-            
-            throw new NotImplementedException();
+            GameObject.Find("Background").GetComponentInChildren<Image>().sprite =
+                    Resources.Load<Sprite>("Backgrounds\\" + backgroundCommand.name);
             advanceScript();
 
         } else if (command.GetType().Equals(typeof(LinkCommand))) {                                 //link
