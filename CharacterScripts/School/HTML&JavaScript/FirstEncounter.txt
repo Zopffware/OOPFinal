@@ -1,4 +1,4 @@
-background|hallway
+background|School
 portrait|JS|L
 portrait|HTML|R
 speaker|HTML

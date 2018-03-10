@@ -1,3 +1,4 @@
+background|HomeBoy
 speaker|
 textblock
 	Welcome to I &#x2764; Code!
@@ -10,4 +11,4 @@ textblock
 	I is to open your inventory. 
 	Have fun!
 [end]
-link|\School\Java\FirstEncounter.txt
+link|\School\Narrator\FirstDay.txt

@@ -1,23 +1,24 @@
-background|hallway
+background|School
 speaker|Java
 portrait|Java|L
 text|*bumps into you* Oh! I'm so sorry! Are you okay?|
 prompt
 	Yeah, I'm fine after seeing you!
-		text|Oh. Well that's good. Um, have a good day!
+		text|Oh. Well, I guess that's good. A-are you a freshman too?
 		addpoints|Java|1
 	[end]
 	Why don't you watch where you're going?
-		text|Why are you so rude? Hmph.
+		text|Why are you so rude? Hmph. 
 		addpoints|Java|-1
 	[end]
 	No, but I think you can make it up to me
-		text|Oh. Um, o-okay. Goodbye.
+		text|Oh. Um, o-okay. That's a little strong don't you think?
 		addpoints|Java|0
+		link|\School\Java\FirstEncounter\SecondNeutral.txt
 	[end]
 	Yeah, I'm okay. Thanks for asking.
-		text|Of course! Have a good day!
+		text|Of course! Are you a freshman too?
 		addpoints|Java|1
 	[end]
 [end]
-link|\Hallway\Python\FirstEncounter.txt
+

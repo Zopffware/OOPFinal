@@ -1,0 +1,10 @@
+background|School
+speaker|Java
+portrait|Java|L
+prompt
+	Yeah, I guess. Ha. Sorry.
+		text|That's okay. I'm Java! You don't seem too bad. Maybe we should hang out sometime?
+		addpoints|Java|1
+	[end]
+	No, I think you can make it up to me. *wink*
+		text|
