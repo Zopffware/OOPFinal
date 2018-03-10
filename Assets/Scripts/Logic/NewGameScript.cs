@@ -23,5 +23,15 @@ public class NewGameScript : MonoBehaviour {
         Vector3 pos = new Vector3(0, 0, 0);
         Instantiate(infoPrefab, pos, Quaternion.identity);
         Destroy(menuPrefab);
+        GameControl.control.money = 1000;
+        GameControl.control.JSLovePoints = 0;
+        GameControl.control.HTMLLovePoints = 0;
+        GameControl.control.CPPLovePoints = 0;
+        GameControl.control.CSLovePoints = 0;
+        GameControl.control.PYLovePoints = 0;
+        GameControl.control.JavaLovePoints = 0;
+        GameControl.control.day = 0;
+        GameControl.control.hour = 0;
+        GameControl.control.commandIndex = 0;
     }
 }

@@ -10,9 +10,11 @@ public class GameControl : MonoBehaviour
 {
 
     public static GameControl control;
-    public GameObject menu;
-
+    public GameObject menu, store, inventory;
     public bool pause = false;
+    public bool shop = false;
+    public bool invt = false;
+
     public int JSLovePoints;
     public int HTMLLovePoints;
     public int JavaLovePoints;
@@ -108,6 +110,32 @@ public class GameControl : MonoBehaviour
                 Time.timeScale = 1.0f;
                 pause = true;
                 menu.SetActive(false);
+            }
+        }
+        if (Input.GetKeyDown("s"))
+        {
+            if (shop == true)
+            {
+                shop = false;
+                store.SetActive(true);
+            }
+            else
+            { 
+                shop = true;
+                store.SetActive(false);
+            }
+        }
+        if (Input.GetKeyDown("i"))
+        {
+            if (invt == true)
+            {
+                invt = false;
+                inventory.SetActive(true);
+            }
+            else
+            {
+                invt = true;
+                inventory.SetActive(false);
             }
         }
     }
