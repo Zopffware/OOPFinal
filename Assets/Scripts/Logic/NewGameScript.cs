@@ -21,7 +21,6 @@ public class NewGameScript : MonoBehaviour {
 
     void GameStart () {
         Vector3 pos = new Vector3(0, 0, 0);
-        Instantiate(infoPrefab, pos, Quaternion.identity);
         Destroy(menuPrefab);
         GameControl.control.money = 1000;
         GameControl.control.JSLovePoints = 0;
@@ -33,6 +32,8 @@ public class NewGameScript : MonoBehaviour {
         GameControl.control.day = 0;
         GameControl.control.hour = 0;
         GameControl.control.commandIndex = 0;
-        GameControl.control.currentScript = new List<ICommand>();
+        Instantiate(infoPrefab, pos, Quaternion.identity);
+        ScriptParser.readScript("\\School\\Java\\FirstEncounter.txt");
+        ScriptParser.advanceScript();
     }
 }

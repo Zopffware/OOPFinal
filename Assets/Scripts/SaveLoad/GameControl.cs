@@ -140,6 +140,10 @@ public class GameControl : MonoBehaviour
                 inventory.SetActive(true);
             }
         }
+        if (Input.GetKeyDown("space"))
+        {
+            ScriptParser.advanceScript();
+        }
     }
 }
 
