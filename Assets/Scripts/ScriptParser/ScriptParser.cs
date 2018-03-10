@@ -6,10 +6,9 @@ using UnityEngine.UI;
 
 public class ScriptParser : MonoBehaviour {
     private static string currentSpeaker = "";
-    public static GameControl currentPrefab, nextPrefab;
     private static int commandIndex = 0;
-
-    private static List<ICommand> currentScript;
+    private static List<ICommand> currentScript = new List<ICommand>();
+    private static bool isPrompting = false;
 
     public static List<ICommand> parse(string script) {
         List<ICommand> commands = new List<ICommand>();
@@ -160,14 +159,21 @@ public class ScriptParser : MonoBehaviour {
 
         } else if (command.GetType().Equals(typeof(PromptCommand))) {                               //prompt
             PromptCommand promptCommand = (PromptCommand)command;
+            isPrompting = true;
             int i = 0;
+            List<GameObject> promptButtons = new List<GameObject>();
             foreach (string choice in promptCommand.getChoices()) {
                 GameObject promptButton = Instantiate(Resources.Load<GameObject>("Prefabs\\PromptButton"),
                         new Vector3(0, 0), Quaternion.identity);
+                promptButtons.Add(promptButton);
                 promptButton.transform.SetParent(GameObject.Find("Background").transform);
                 promptButton.transform.position = new Vector3(500, 350 - i * 40);
                 promptButton.GetComponentInChildren<Text>().text = choice;
                 promptButton.GetComponentInChildren<Button>().onClick.AddListener(delegate {
+                    isPrompting = false;
+                    foreach (GameObject button in promptButtons) {
+                        Destroy(button);
+                    }
                     currentScript.InsertRange(commandIndex, promptCommand.getConsequences(choice));
                     advanceScript();
                 });
@@ -189,10 +195,12 @@ public class ScriptParser : MonoBehaviour {
     }
 
     public static void advanceScript() {
-        if (commandIndex >= currentScript.Count - 1) {
-            Debug.Log("The script has finished.");
-        } else {
-            executeCommand(currentScript[commandIndex++]);
+        if (!isPrompting) {
+            if (commandIndex >= currentScript.Count - 1) {
+                Debug.Log("The script has finished.");
+            } else {
+                executeCommand(currentScript[commandIndex++]);
+            }
         }
     }
 
