@@ -17,72 +17,73 @@ public class ScriptParser : MonoBehaviour {
         PromptCommand currentPrompt = null;
         string currentChoice = null;
         string currentConsequences = "";
-
         foreach (string line in script.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries)) {
-            string[] lineData = line.Trim().Split('|');
-            if (textBlock) {
-                if (lineData[0].Equals("[end]")) {
-                    textBlock = false;
-                } else {
-                    commands.Add(new TextCommand(lineData[0]));
-                }
-            } else if (prompt) {
-                if (currentPrompt == null) {
-                    currentPrompt = new PromptCommand();
-                }
-                if (currentChoice == null) {
+            if (!string.IsNullOrEmpty(line.Trim())) {
+                string[] lineData = line.Trim().Split('|');
+                if (textBlock) {
                     if (lineData[0].Equals("[end]")) {
-                        commands.Add(currentPrompt);
-                        currentPrompt = null;
-                        prompt = false;
+                        textBlock = false;
                     } else {
-                        currentChoice = lineData[0];
+                        commands.Add(new TextCommand(lineData[0]));
+                    }
+                } else if (prompt) {
+                    if (currentPrompt == null) {
+                        currentPrompt = new PromptCommand();
+                    }
+                    if (currentChoice == null) {
+                        if (lineData[0].Equals("[end]")) {
+                            commands.Add(currentPrompt);
+                            currentPrompt = null;
+                            prompt = false;
+                        } else {
+                            currentChoice = lineData[0];
+                        }
+                    } else {
+                        if (lineData[0].Equals("[end]")) {
+                            currentPrompt.addConsequences(currentChoice, parse(currentConsequences));
+                            currentConsequences = "";
+                            currentChoice = null;
+                        } else {
+                            currentConsequences += line + "\r\n";
+                        }
                     }
                 } else {
-                    if (lineData[0].Equals("[end]")) {
-                        currentPrompt.addConsequences(currentChoice, parse(currentConsequences));
-                        currentConsequences = "";
-                        currentChoice = null;
-                    } else {
-                        currentConsequences += line + "\r\n";
+                    Command command;
+                    try {
+                        command = (Command)(Enum.Parse(typeof(Command), lineData[0].ToUpper()));
+                    } catch (ArgumentException e) {
+                        throw new ArgumentException("Invalid command: " + lineData[0]);
                     }
-                }
-            } else {
-                Command command;
-                try {
-                    command = (Command)(Enum.Parse(typeof(Command), lineData[0].ToUpper()));
-                } catch (ArgumentException e) {
-                    throw new ArgumentException("Invalid command: " + lineData[0]);
-                }
-                switch (command) {
-                    case Command.SPEAKER:
-                        commands.Add(new SpeakerCommand(lineData[1]));
-                        break;
-                    case Command.TEXT:
-                        commands.Add(new TextCommand(lineData[1]));
-                        break;
-                    case Command.SPEAKERTEXT:
-                        commands.Add(new SpeakerCommand(lineData[1]));
-                        commands.Add(new TextCommand(lineData[2]));
-                        break;
-                    case Command.TEXTBLOCK:
-                        textBlock = true;
-                        break;
-                    case Command.PORTRAIT:
-                        commands.Add(new PortraitCommand(lineData[1], lineData[2][0]/*, lineData[3][0]*/));
-                        break;
-                    case Command.BACKGROUND:
-                        commands.Add(new BackgroundCommand(lineData[1]));
-                        break;
-                    case Command.LINK:
-                        commands.Add(new LinkCommand(lineData[1]));
-                        break;
-                    case Command.ADDPOINTS:
-                        commands.Add(new AddPointsCommand(lineData[1], Int16.Parse(lineData[2])));
-                        break;
-                    case Command.PROMPT:
-                        prompt = true;
-                        break;
+                    switch (command) {
+                        case Command.SPEAKER:
+                            commands.Add(new SpeakerCommand(lineData[1]));
+                            break;
+                        case Command.TEXT:
+                            commands.Add(new TextCommand(lineData[1]));
+                            break;
+                        case Command.SPEAKERTEXT:
+                            commands.Add(new SpeakerCommand(lineData[1]));
+                            commands.Add(new TextCommand(lineData[2]));
+                            break;
+                        case Command.TEXTBLOCK:
+                            textBlock = true;
+                            break;
+                        case Command.PORTRAIT:
+                            commands.Add(new PortraitCommand(lineData[1], lineData[2][0]/*, lineData[3][0]*/));
+                            break;
+                        case Command.BACKGROUND:
+                            commands.Add(new BackgroundCommand(lineData[1]));
+                            break;
+                        case Command.LINK:
+                            commands.Add(new LinkCommand(lineData[1]));
+                            break;
+                        case Command.ADDPOINTS:
+                            commands.Add(new AddPointsCommand(lineData[1], Int16.Parse(lineData[2])));
+                            break;
+                        case Command.PROMPT:
+                            prompt = true;
+                            break;
+                    }
                 }
             }
         }
@@ -167,7 +168,7 @@ public class ScriptParser : MonoBehaviour {
                         new Vector3(0, 0), Quaternion.identity);
                 promptButtons.Add(promptButton);
                 promptButton.transform.SetParent(GameObject.Find("Background").transform);
-                promptButton.transform.position = new Vector3(500, 350 - i * 40);
+                promptButton.transform.position = new Vector3(Screen.width / 2, (Screen.height - 55) - i * 40);
                 promptButton.GetComponentInChildren<Text>().text = choice;
                 promptButton.GetComponentInChildren<Button>().onClick.AddListener(delegate {
                     isPrompting = false;
@@ -196,7 +197,7 @@ public class ScriptParser : MonoBehaviour {
 
     public static void advanceScript() {
         if (!isPrompting) {
-            if (commandIndex >= currentScript.Count - 1) {
+            if (commandIndex >= currentScript.Count) {
                 Debug.Log("The script has finished.");
             } else {
                 executeCommand(currentScript[commandIndex++]);

@@ -1,3 +1,5 @@
+background|ParkBackGround
+portrait|C++|L
 speaker|C++
 text|Hey, cute boy! Come take a picture of me for my Insta!|
 prompt

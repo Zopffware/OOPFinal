@@ -1,4 +1,6 @@
 speaker|C#
+portrait|C#|L
+background|LibraryBackGround
 text|What do you mean you can't help me?! You aren't doing anything! I asked for one simple thing...|
 prompt
 	Could I be of any help?

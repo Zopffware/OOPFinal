@@ -1,3 +1,6 @@
+background|hallway
+portrait|JS|L
+portrait|HTML|R
 speaker|HTML
 text|I can't believe you!|
 speakertext|JavaScript|Me?! I can't believe you!
@@ -17,4 +20,5 @@ prompt
 		addpoints|JavaScript|-1
 	[end]
 [end]
+portrait||R
 link|\Park\C++\FirstEncounter.txt

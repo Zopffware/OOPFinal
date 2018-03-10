@@ -1,4 +1,6 @@
+background|hallway
 speaker|Java
+portrait|Java|L
 text|*bumps into you* Oh! I'm so sorry! Are you okay?|
 prompt
 	Yeah, I'm fine after seeing you!
