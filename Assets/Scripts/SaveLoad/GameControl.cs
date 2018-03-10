@@ -25,6 +25,7 @@ public class GameControl : MonoBehaviour
     public int day;
     public int hour;
     public int commandIndex;
+    public List<ICommand> currentScript;
 
     void Awake()
     {
@@ -60,6 +61,7 @@ public class GameControl : MonoBehaviour
         data.money = money;
         data.day = day;
         data.hour = hour;
+        
 
         bf.Serialize(file, data);
         file.Close();
@@ -103,13 +105,13 @@ public class GameControl : MonoBehaviour
             {
                 Time.timeScale = 0.0f;
                 pause = false;
-                menu.SetActive(true);
+                menu.SetActive(false);
             }
             else
             {
                 Time.timeScale = 1.0f;
                 pause = true;
-                menu.SetActive(false);
+                menu.SetActive(true);
             }
         }
         if (Input.GetKeyDown("s"))
@@ -117,12 +119,12 @@ public class GameControl : MonoBehaviour
             if (shop == true)
             {
                 shop = false;
-                store.SetActive(true);
+                store.SetActive(false);
             }
             else
             { 
                 shop = true;
-                store.SetActive(false);
+                store.SetActive(true);
             }
         }
         if (Input.GetKeyDown("i"))
@@ -130,12 +132,12 @@ public class GameControl : MonoBehaviour
             if (invt == true)
             {
                 invt = false;
-                inventory.SetActive(true);
+                inventory.SetActive(false);
             }
             else
             {
                 invt = true;
-                inventory.SetActive(false);
+                inventory.SetActive(true);
             }
         }
     }

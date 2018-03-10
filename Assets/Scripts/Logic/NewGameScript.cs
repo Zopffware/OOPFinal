@@ -33,5 +33,6 @@ public class NewGameScript : MonoBehaviour {
         GameControl.control.day = 0;
         GameControl.control.hour = 0;
         GameControl.control.commandIndex = 0;
+        GameControl.control.currentScript = new List<ICommand>();
     }
 }
