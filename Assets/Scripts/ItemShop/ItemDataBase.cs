@@ -21,7 +21,7 @@ public class ItemDataBase : MonoBehaviour {
     {
         for(int i =0; i<itemData.Count; i++)
         {
-            dataBase.Add(new Item((int)itemData[i]["id"],itemData[i]["title"].ToString(),(int)itemData[i]["value"],(int)itemData[i]["lovepoints"],itemData[i]["description"].ToString()));
+            dataBase.Add(new Item((int)itemData[i]["id"],itemData[i]["title"].ToString(),(int)itemData[i]["value"],(int)itemData[i]["lovepoints"],itemData[i]["decription"].ToString()));
         }
     }
 }
