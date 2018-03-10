@@ -168,7 +168,7 @@ public class ScriptParser : MonoBehaviour {
                         new Vector3(0, 0), Quaternion.identity);
                 promptButtons.Add(promptButton);
                 promptButton.transform.SetParent(GameObject.Find("Background").transform);
-                promptButton.transform.position = new Vector3(500, 350 - i * 40);
+                promptButton.transform.position = new Vector3(Screen.width / 2, (Screen.height - 55) - i * 40);
                 promptButton.GetComponentInChildren<Text>().text = choice;
                 promptButton.GetComponentInChildren<Button>().onClick.AddListener(delegate {
                     isPrompting = false;
