@@ -33,7 +33,7 @@ public class ItemDataBase : MonoBehaviour {
     {
         for(int i =0; i<itemData.Count; i++)
         {
-            dataBase.Add(new Item((int)itemData[i]["id"],itemData[i]["title"].ToString(),(int)itemData[i]["value"],(int)itemData[i]["lovepoints"],itemData[i]["decription"].ToString()));
+            dataBase.Add(new Item((int)itemData[i]["id"],itemData[i]["title"].ToString(),(int)itemData[i]["value"],(int)itemData[i]["lovepoints"],itemData[i]["decription"].ToString(),itemData[i]["slug"].ToString()));
         }
     }
 }
@@ -45,13 +45,22 @@ public class Item
     public int Value { get; set; }
     public int Lovepoints { get; set; }
     public string Description { get; set; }
+    public string slug { get; set; }
+    public Sprite Sprite { get; set; }
 
-    public Item(int id , string title, int value,int lovepoints, string description)
+
+
+    public Item(int id , string title, int value,int lovepoints, string description,string slug)
     {
         this.ID = id;
         this.Title = title;
         this.Value = value;
         this.Lovepoints = lovepoints;
         this.Description = description;
+        this.Sprite = Resources.Load<Sprite>("Sprites/"+ slug);
+    }
+    public Item()
+    {
+        this.ID = -1;
     }
 }
