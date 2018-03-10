@@ -1,5 +1,6 @@
 speaker|Python
-
+background|hallway
+portrait|Python|L
 text|Oh thupid thing! Why won't you open?! *locker banging*|
 
 prompt
@@ -28,4 +29,4 @@ prompt
 
 [end]
 
-link|\CharacterScripts\Library\C#\FirstEncounter.txt
+link|\Library\C#\FirstEncounter.txt
