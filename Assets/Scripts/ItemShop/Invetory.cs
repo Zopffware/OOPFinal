@@ -44,7 +44,7 @@ public class Invetory : MonoBehaviour {
                 items[i] = itemToAdd;
                 GameObject itemObj = Instantiate(inventoryItem);
                 itemObj.transform.SetParent(slots[i].transform);
-                itemObj.transform.position = vector;
+                itemObj.transform.position = Vector2.zero;
                 itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
                 Debug.Log("yesa");
                 break;
