@@ -8,7 +8,7 @@ using System.IO;
 
 public class GameControl : MonoBehaviour
 {
-
+    
     public static GameControl control;
     public GameObject menu, store, inventory;
     public bool pause = false;
@@ -26,10 +26,10 @@ public class GameControl : MonoBehaviour
     public int hour;
     public int commandIndex;
     public List<ICommand> currentScript;
-
+    Invetory Inventory;
     void Awake()
     {
-        
+        Inventory = FindObjectOfType<Invetory>();
         if (control == null)
         {
             DontDestroyOnLoad(gameObject);
@@ -92,7 +92,25 @@ public class GameControl : MonoBehaviour
     {
         if (money >= minusMon)
         {
+            int v = 0;
             money = money - minusMon;
+            if(minusMon == 750)
+            {
+                 v = 0;
+            }else if(minusMon ==850)
+            {
+                v = 1;
+            }else if (minusMon == 925)
+            {
+                v = 2;
+            }else if (minusMon == 1000)
+            {
+                v = 3;
+            }else if (minusMon == 800)
+            {
+                v = 4;
+            }
+            Inventory.AddItem(v, 1.525879e-05f);
         }
 
     }

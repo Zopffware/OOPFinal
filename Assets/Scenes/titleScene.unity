@@ -483,10 +483,10 @@ RectTransform:
   m_Father: {fileID: 1362312089}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.40331408, y: 0.11852133}
-  m_AnchorMax: {x: 0.65562814, y: 0.8527733}
-  m_AnchoredPosition: {x: 2.3, y: -21.9}
-  m_SizeDelta: {x: 5.5, y: -84.1}
+  m_AnchorMin: {x: 0.40331408, y: 0.17338663}
+  m_AnchorMax: {x: 0.65562814, y: 0.69554657}
+  m_AnchoredPosition: {x: 2.2999992, y: -0.40000153}
+  m_SizeDelta: {x: 5.5, y: 4.9000015}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &253217578
 MonoBehaviour:
@@ -825,110 +825,6 @@ RectTransform:
   m_AnchoredPosition: {x: -5, y: 0}
   m_SizeDelta: {x: -20, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1001 &389400063
-Prefab:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 106114857}
-    m_Modifications:
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_RootOrder
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 287
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 131
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_Pivot.x
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 224725838959058334, guid: 42115e1f39806814788cab2536748a03,
-        type: 2}
-      propertyPath: m_Pivot.y
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 1355620524293854, guid: 42115e1f39806814788cab2536748a03, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_ParentPrefab: {fileID: 100100000, guid: 42115e1f39806814788cab2536748a03, type: 2}
-  m_IsPrefabParent: 0
 --- !u!82 &399615321 stripped
 AudioSource:
   m_PrefabParentObject: {fileID: 82059979629535350, guid: 6b4caa1e32bbb8d4dad42d261d1729f1,
@@ -1086,10 +982,10 @@ RectTransform:
   m_Father: {fileID: 253217577}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.025315046, y: 0.22219642}
-  m_AnchorMax: {x: 1, y: 0.8112144}
-  m_AnchoredPosition: {x: -2.5, y: -43}
-  m_SizeDelta: {x: 1.3999996, y: 3.4000015}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 2.3778, y: 13.4}
+  m_SizeDelta: {x: 192.76, y: 150.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &417224207
 MonoBehaviour:
@@ -1140,13 +1036,13 @@ MonoBehaviour:
     m_Right: 10
     m_Top: 10
     m_Bottom: 5
-  m_ChildAlignment: 6
-  m_StartCorner: 2
+  m_ChildAlignment: 0
+  m_StartCorner: 0
   m_StartAxis: 0
   m_CellSize: {x: 50, y: 50}
   m_Spacing: {x: 10, y: 10}
-  m_Constraint: 0
-  m_ConstraintCount: 2
+  m_Constraint: 1
+  m_ConstraintCount: 3
 --- !u!1 &464244011
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,7 +2256,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inventorySlot: {fileID: 1022282260566606, guid: 485f198354544c643a4bebeb451ec8ec,
     type: 2}
-  invetoryItem: {fileID: 1682615133858438, guid: 924c05d650d687848b3a9c14c5a50d6e,
+  inventoryItem: {fileID: 1182212751154830, guid: 32e33cb0a86ebda488b6b33770c09a35,
     type: 2}
   slots: []
 --- !u!1 &948848088 stripped
@@ -3613,7 +3509,7 @@ MonoBehaviour:
   PYLovePoints: 0
   CSLovePoints: 0
   CPPLovePoints: 0
-  money: 1000
+  money: 9000
   day: 1
   hour: 1
   commandIndex: 0
