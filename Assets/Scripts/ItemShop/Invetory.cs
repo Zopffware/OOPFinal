@@ -23,5 +23,6 @@ public class Invetory : MonoBehaviour {
             slots.Add(Instantiate(inventorySlot));
             slots[i].transform.SetParent(slotPanel.transform);
         }
+            GameControl.control.inventory.SetActive(false);
     }
 }
