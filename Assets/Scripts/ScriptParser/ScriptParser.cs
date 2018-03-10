@@ -1,12 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Text.RegularExpressions;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScriptParser {
-    private static string speaker = "";
+public class ScriptParser : MonoBehaviour {
+    private static string currentSpeaker = "";
     public static GameControl currentPrefab, nextPrefab;
     private static int commandIndex = 0;
 
@@ -95,12 +94,17 @@ public class ScriptParser {
     public static void executeCommand(ICommand command) {
         if (command.GetType().Equals(typeof(SpeakerCommand))) {                                     //speaker
             SpeakerCommand speakerCommand = (SpeakerCommand)command;
-            Text speaker = GameObject.Find("Speaker").GetComponentInChildren<Text>();
+            currentSpeaker = speakerCommand.speaker;
+            GameObject speakerBox = GameObject.Find("Speaker");
+            Text speakerText = speakerBox.GetComponentInChildren<Text>();
+            Image speakerImage = speakerBox.GetComponentInChildren<Image>();
             if (speakerCommand.speaker.Equals("")) {
-                speaker.color = Color.clear;
+                speakerText.color = Color.clear;
+                speakerImage.color = Color.clear;
             } else {
-                speaker.color = Color.white;
-                speaker.text = speakerCommand.speaker;
+                speakerText.color = Color.white;
+                speakerImage.color = new Color(1f, 1f, 1f, 0.4f);
+                speakerText.text = speakerCommand.speaker;
             }
             advanceScript();
 
@@ -111,7 +115,6 @@ public class ScriptParser {
         } else if (command.GetType().Equals(typeof(PortraitCommand))) {                             //portrait
             PortraitCommand portraitCommand = (PortraitCommand)command;
             Image portrait = GameObject.Find(portraitCommand.side == 'L' ? "LeftPortrait" : "RightPortrait").GetComponentInChildren<Image>();
-            Debug.Log(portrait);
             if (portraitCommand.character.Equals("")) {
                 portrait.color = Color.clear;
             } else {
@@ -157,11 +160,21 @@ public class ScriptParser {
 
         } else if (command.GetType().Equals(typeof(PromptCommand))) {                               //prompt
             PromptCommand promptCommand = (PromptCommand)command;
-            //TODO: prompt user for choice, execute script according to choice
-            throw new NotImplementedException();
+            int i = 0;
+            foreach (string choice in promptCommand.getChoices()) {
+                GameObject promptButton = Instantiate(Resources.Load<GameObject>("Prefabs\\PromptButton"),
+                        new Vector3(0, 0), Quaternion.identity);
+                promptButton.transform.SetParent(GameObject.Find("Background").transform);
+                promptButton.transform.position = new Vector3(500, 350 - i * 40);
+                promptButton.GetComponentInChildren<Text>().text = choice;
+                promptButton.GetComponentInChildren<Button>().onClick.AddListener(delegate {
+                    currentScript.InsertRange(commandIndex, promptCommand.getConsequences(choice));
+                    advanceScript();
+                });
+                i++;
+            }
         }
     }
-
     public static void readScript(string filename) {
         try {
             using (StreamReader sr = new StreamReader((filename.StartsWith("C:\\") || filename.StartsWith("/"))
@@ -181,6 +194,13 @@ public class ScriptParser {
         } else {
             executeCommand(currentScript[commandIndex++]);
         }
+    }
+
+    public static List<ICommand> getCurrentScript() {
+        return currentScript;
+    }
+    public static int getCommandIndex() {
+        return commandIndex;
     }
 
 	/*public static void oldParse(string script) {

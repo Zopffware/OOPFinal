@@ -3,7 +3,7 @@ portrait|Java|R
 speaker|Michael
 text|This is a line of text!|You can make comments by specifying more arguments than neccessary.
 speakertext|Jeff|You can also set the speaker and text at the same time.
-speaker|Michael
+speaker|
 textblock
 	If you want to display many lines of text...
 	Without ever changing the speaker or doing anything else...
@@ -14,15 +14,15 @@ speakertext|Michael|This is pretty cool, isn't it?
 portrait||L
 prompt
 	choice1
-		text|choice1
 		addpoints|JS|5
+		text|choice1
 	[end]
 	choice2
 		text|choice2
 	[end]
 	choice3
-		text|choice3
 		addpoints|JS|-5
+		text|choice3
 	[end]
 [end]
 link|otherScript.txt
