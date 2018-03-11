@@ -1,0 +1,17 @@
+background|School
+speaker|Java
+portrait|Java|L
+prompt
+	That sounds awesome!
+		text|Great! Here's my number so you can get ahold of me.
+		addpoints|Java|5
+	[end]
+	U-uh, s-sure. C-cool.
+		text|Oh, uh, here's my number. See ya.
+		addpoints|Java|0
+	[end]
+	Nah
+		text|Oh. Um, okay. Have a good day then. 
+		addpoints|Java|-5
+	[end]
+[end]

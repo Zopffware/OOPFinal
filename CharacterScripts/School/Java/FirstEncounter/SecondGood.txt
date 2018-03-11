@@ -1,0 +1,17 @@
+background|School
+speaker|Java
+portrait|Java|L
+prompt
+	Yeah, I am! I'm excited for school.
+		text|That's awesome! So am I! I absolutely love school. I'm Java, maybe we can hang out sometime?
+		addpoints|Java|5
+	[end]
+	Yeah. 
+		text|Oh, um cool. D-do you like school?
+		addpoints|Java|0
+	[end]
+	Nope, just creeping around.
+		text|Oh. Um, okay. Have a good day then. 
+		addpoints|Java|-5
+	[end]
+[end]

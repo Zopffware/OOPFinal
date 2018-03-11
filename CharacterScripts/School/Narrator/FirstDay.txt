@@ -1,4 +1,4 @@
 background|School
 speaker|
 text|Wow! The school looks so big! I'm excited to see what the day holds for me!|
-link|\School\Java\FirstEncounter.txt
+link|\School\Java\FirstEncounter\First.txt

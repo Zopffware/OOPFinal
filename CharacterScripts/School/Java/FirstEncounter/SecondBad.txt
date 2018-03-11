@@ -1,0 +1,20 @@
+background|School
+speaker|Java
+portrait|Java|L
+prompt
+	I'm sorry, just stressed with it being my first day.
+		text|Oh. It's my first day too. A-are you a freshman?
+		addpoints|Java|0
+		link|\School\Java\FirstEncounter\SecondGood.txt
+	[end]
+	Gosh, I'm sorry. I didn't realize you were so pretty.
+		text|O-oh. Uh, thanks?  
+		addpoints|Java|-1
+		link|\School\Java\FirstEncounter\SecondBad.txt
+	[end]
+	I'm not rude, you should really watch were you're going.
+		text|Wow. 
+		addpoints|Java|-5
+		link|\School\Java\FirstEncounter\SecondNeutral.txt
+	[end]
+[end]
