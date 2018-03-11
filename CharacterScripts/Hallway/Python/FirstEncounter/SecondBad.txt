@@ -1,0 +1,20 @@
+speaker|Python
+background|hallway
+portrait|Python|L
+prompt
+	I'm sorry, I didn't mean to be rude.
+		text|Oh, thankth for apologizing. Are you nervouth to thart clath?
+		addpoints|Python|5
+		link|\Hallway\Python\FirstEncounter\ThirdGood.txt
+	[end]
+	It's just cute, what can I say?
+		text|You can be nither about it. Hmph
+		addpoints|Python|0
+		link|\Hallway\Python\FirstEncounter\ThirdBad.txt
+	[end]
+	I'm sorry, I've just never run into someone with a lisp.
+		text|Yeah, well we exthitht. You thould be nither.
+		addpoints|Python|-5
+		link|\Hallway\Python\FirstEncounter\ThirdBad.txt
+	[end]
+[end]

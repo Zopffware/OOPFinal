@@ -1,0 +1,18 @@
+speaker|Python
+background|hallway
+portrait|Python|L
+prompt
+	Yeah, but I'm excited for some hard work!
+		text|Ha, yeah.. You theem cool. Wanna hang out later? Here my number.
+		addpoints|Python|0
+	[end]
+	Yeah, I'm not looking forward to the work load.
+		text|I feel that! We theem thimilar. We thould hang out thometime! Here my number!
+		addpoints|Python|5
+	[end]
+	Nah, school is stupid easy.
+		text|Oh. Nithe. Well, have a good day.
+		addpoints|Python|-5
+	[end]
+[end]
+link|\Hallway\Narrator\Cont.txt

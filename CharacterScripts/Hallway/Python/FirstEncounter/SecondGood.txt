@@ -1,0 +1,20 @@
+speaker|Python
+background|hallway
+portrait|Python|L
+prompt
+	Nice to meet you too!
+		text|Are you nervouth to thart clath?
+		addpoints|Python|5
+		link|\Hallway\Python\FirstEncounter\ThirdGood.txt
+	[end]
+	Of course it's nice to meet me.
+		text|You're a bit full of yourthelf, aren't you?
+		addpoints|Python|-5
+		link|\Hallway\Python\FirstEncounter\ThirdBad.txt
+	[end]
+	Uh yeah. 
+		text|Uh. Yeah. So, you nervouth to thart clath?
+		addpoints|Python|0
+		link|\Hallway\Python\FirstEncounter\ThirdGood.txt
+	[end]
+[end]

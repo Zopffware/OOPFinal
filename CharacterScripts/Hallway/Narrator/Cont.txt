@@ -1,0 +1,6 @@
+speaker|
+background|hallway
+portrait||L
+text|She was interesting! But I have to run by the library before class to grab some books!|
+
+link|\Library\C#\FirstEncounter\First.txt

@@ -1,0 +1,18 @@
+speaker|Python
+background|hallway
+portrait|Python|L
+prompt
+	Nah, not at all.
+		text|Ha, yeah. Okay. Have a good day.
+		addpoints|Python|0
+	[end]
+	I'm sorry, I didn't mean to come off so mean.
+		text|It'th okay. We thould hang out thometime! Here my number!
+		addpoints|Python|5
+	[end]	
+	Yeah, but I enjoy it. 
+		text|Oh. Okay. Well, have a good day.
+		addpoints|Python|-5
+	[end]
+[end]
+link|\Hallway\Narrator\Cont.txt

@@ -2,31 +2,20 @@ speaker|Python
 background|hallway
 portrait|Python|L
 text|Oh thupid thing! Why won't you open?! *locker banging*|
-
 prompt
-	
 	Can I try to help?
-		
-		text|*locker opens* Oh! Thank you! You're a live thaver!
-		
-		addpoints|Python|1
-	
+		text|*locker opens* Oh! Thank you! You're a live thaver! I'm Python, nithe to meet you!
+		addpoints|Python|5
+		link|\Hallway\Python\FirstEncounter\SecondGood.txt
 	[end]
-	
 	A beauty like you needs help from a knight like me!
-		
-		text|*You have issues but it eventually opens* Oh, um c-cool. Thankth. 
-	
+		text|*You have issues but it eventually opens* Oh, um c-cool. Thankth. Nithe to meet you. 
+		addpoints|Python|0
+		link|\Hallway\Python\FirstEncounter\SecondGood.txt
 	[end]
-	
 	Do you have a lisp? That's cute.
-		
 		text|That ith rude to athk.
-		
-		addpoints|JS|-5
-	
+		addpoints|Python|-5
+		link|\Hallway\Python\FirstEncounter\SecondBad.txt
 	[end]
-
 [end]
-
-link|\Library\C#\FirstEncounter.txt
