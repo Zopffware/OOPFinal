@@ -1,0 +1,7 @@
+background|School
+speaker|
+portrait||L
+textblock
+	That was interesting! Better start heading to class though.
+[end]
+link|\Hallway\Python\FirstEncounter\First.txt

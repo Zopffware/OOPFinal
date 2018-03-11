@@ -1,0 +1,19 @@
+background|School
+speaker|Java
+portrait|Java|L
+prompt
+	Where are you going?
+		text|To class? Duh.
+		addpoints|Java|0
+		link|\School\Narrator\FirstDay2.txt
+	[end]
+	Hey! Wait! I'm sorry. You seem really cool!
+		text|Oh, uh, thanks. See ya.
+		addpoints|Java|0
+		link|\School\Narrator\FirstDay2.txt
+	[end]
+	Have a good day,  I guess.
+		addpoints|Java|0
+		link|\School\Narrator\FirstDay2.txt
+	[end]
+[end]

@@ -5,11 +5,13 @@ text|*bumps into you* Oh! I'm so sorry! Are you okay?|
 prompt
 	Yeah, I'm fine after seeing you!
 		text|Oh. Well, I guess that's good. A-are you a freshman too?
-		addpoints|Java|1
+		addpoints|Java|5
+		link|\School\Java\FirstEncounter\SecondGood.txt
 	[end]
 	Why don't you watch where you're going?
 		text|Why are you so rude? Hmph. 
-		addpoints|Java|-1
+		addpoints|Java|-5
+		link|\School\Java\FirstEncounter\SecondBad.txt
 	[end]
 	No, but I think you can make it up to me
 		text|Oh. Um, o-okay. That's a little strong don't you think?
@@ -18,7 +20,8 @@ prompt
 	[end]
 	Yeah, I'm okay. Thanks for asking.
 		text|Of course! Are you a freshman too?
-		addpoints|Java|1
+		addpoints|Java|5
+		link|\School\Java\FirstEncounter\SecondGood.txt
 	[end]
 [end]
 

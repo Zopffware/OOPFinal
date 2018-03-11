@@ -8,13 +8,13 @@ prompt
 		link|\School\Java\FirstEncounter\SecondGood.txt
 	[end]
 	Gosh, I'm sorry. I didn't realize you were so pretty.
-		text|O-oh. Uh, thanks?  
-		addpoints|Java|-1
-		link|\School\Java\FirstEncounter\SecondBad.txt
+		text|O-oh. Uh, thanks? I'm Java. Are you a freshman?
+		addpoints|Java|5
+		link|\School\Java\FirstEncounter\SecondGood.txt
 	[end]
 	I'm not rude, you should really watch were you're going.
-		text|Wow. 
+		text|Wow. *walks away*
 		addpoints|Java|-5
-		link|\School\Java\FirstEncounter\SecondNeutral.txt
+		link|\School\Java\FirstEncounter\ThirdBad.txt
 	[end]
 [end]

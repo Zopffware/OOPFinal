@@ -1,5 +1,6 @@
 background|HomeBoy
 speaker|
+portrait||L
 textblock
 	Welcome to I &#x2764; Code!
 	You are a new college student going to a tech college!

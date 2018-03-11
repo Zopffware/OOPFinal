@@ -10,6 +10,7 @@ prompt
 	No, I think you can make it up to me. *wink*
 		text|Ha, yeah, sure. Have a good day. 
 		addpoints|Java|-5
+		link|\School\Java\FirstEncounter\ThirdBad.txt
 	[end]
 	Oh, was it? I'm sorry.
 		text|That's okay. Thanks for apologizing. You don't seem too bad. I'm Java, maybe we can hang out sometime?

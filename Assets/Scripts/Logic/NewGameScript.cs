@@ -33,7 +33,7 @@ public class NewGameScript : MonoBehaviour {
         GameControl.control.hour = 0;
         GameControl.control.commandIndex = 0;
         Instantiate(infoPrefab, pos, Quaternion.identity);
-        ScriptParser.readScript("\\School\\Java\\FirstEncounter.txt");
+        ScriptParser.readScript("\\Home\\Narrator\\Intro.txt");
         ScriptParser.advanceScript();
     }
 }

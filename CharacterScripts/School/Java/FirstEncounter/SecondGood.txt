@@ -5,13 +5,16 @@ prompt
 	Yeah, I am! I'm excited for school.
 		text|That's awesome! So am I! I absolutely love school. I'm Java, maybe we can hang out sometime?
 		addpoints|Java|5
+		link|\School\Java\FirstEncounter\ThirdGood.txt
 	[end]
 	Yeah. 
-		text|Oh, um cool. D-do you like school?
+		text|Oh, um cool. I'll see ya later.
 		addpoints|Java|0
+		link|\School\Java\FirstEncounter\ThirdBad.txt
 	[end]
 	Nope, just creeping around.
 		text|Oh. Um, okay. Have a good day then. 
 		addpoints|Java|-5
+		link|\School\Java\FirstEncounter\ThirdBad.txt
 	[end]
 [end]
