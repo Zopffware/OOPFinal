@@ -1,0 +1,20 @@
+speaker|C#
+portrait|C#|L
+background|LibraryBackGround
+prompt
+	"Obviously you should stay out of other people's business."
+		text|Why are you moking me?! That's so childish.
+		addpoints|C#|-5
+		link|\Library\C#\FirstEncounter\ThirdBad.txt
+	[end]
+	I'm sorry, you just seem like an extremely smart girl.
+		text|Oh, well, thanks. But I do need some help. 
+		addpoints|C#|5
+		link|\Library\C#\FirstEncounter\ThirdGood.txt
+	[end]
+	That's no fun. I like poking into people's business.
+		text|Well you shouldn't. It's not nice.
+		addpoints|C#|0
+		link|\Library\C#\FirstEncounter\ThirdBad.txt
+	[end]
+[end]

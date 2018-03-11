@@ -1,0 +1,5 @@
+speaker|
+portrait||L
+background|LibraryBackGround
+text|She was really pretty! I hope I didn't scare her off. We'll see. *bell rings* 
+link|\School\Narrator\After.txt

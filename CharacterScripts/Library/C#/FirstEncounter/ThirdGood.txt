@@ -1,0 +1,18 @@
+speaker|C#
+portrait|C#|L
+background|LibraryBackGround
+prompt
+	Do you need a tutor? I'm pretty good if I do say so. 
+		text|Actually, yeah! That'd be great. Here's my number. See ya later!
+		addpoints|C#|5
+	[end]
+	Could I help you study?
+		text|Sure. Sounds like fun. Here's my number. 
+		addpoints|C#|0
+	[end]
+	I hope to see you around!
+		text|Yeah.  Have a good day.
+		addpoints|C#|-5
+	[end]
+[end]
+link|\Library\Narrator\Cont.txt

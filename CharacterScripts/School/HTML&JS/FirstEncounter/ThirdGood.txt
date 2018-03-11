@@ -1,0 +1,22 @@
+background|School
+portrait|JS|L
+portrait|HTML|R
+speaker|HTML
+prompt
+	I think you're both really pretty, and you're both right.
+		speakertext|Both|*roll their eyes* Yeah, thanks. 
+		addpoints|HTML|0
+		addpoints|JS|0
+	[end]
+	I hope that I can eventually understand what was being discussed.
+		speakertext|HTML|Maybe you can hang out with us sometime.
+		speakertext|JS|Yeah, so you can actually understand. Here's our number!
+		addpoints|JS|5
+		addpoints|HTML|5
+	[end]
+	I still don't believe that you're twins. 
+		speakertext|Both|*roll their eyes* Thanks. 
+		addpoints|HTML|-5
+		addpoints|JS|-5
+	[end]
+[end]

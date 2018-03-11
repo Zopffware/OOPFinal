@@ -1,0 +1,25 @@
+background|School
+portrait|JS|L
+portrait|HTML|R
+speaker|HTML
+prompt
+	I don't know what I was exactly deciding on.
+		speakertext|HTML|Nothing important.
+		speakertext|JS|Oh really?!
+		addpoints|HTML|5
+		addpoints|JS|-5
+	link|\School\HTML&JS\FirstEncounter\ThirdGood.txt
+	[end]
+	You're welcome ladies.
+		speakertext|Both|Finally a gentleman. 
+		addpoints|JS|5
+		addpoints|HTML|5
+	link|\School\HTML&JS\FirstEncounter\ThirdGood.txt
+	[end]
+	Uh, are you guys like twins?
+		speakertext|Both|Oh my gosh, really? You couldn't tell?
+		addpoints|HTML|-5
+		addpoints|JS|-5
+	link|\School\HTML&JS\FirstEncounter\ThirdBad.txt
+	[end]
+[end]

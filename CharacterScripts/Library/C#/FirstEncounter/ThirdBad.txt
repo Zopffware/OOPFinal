@@ -1,0 +1,18 @@
+speaker|C#
+portrait|C#|L
+background|LibraryBackGround
+prompt
+	I'm sorry, I thought it would make you laugh.
+		text|Well, it didn't. Have a nice day.
+		addpoints|C#|0
+	[end]
+	I'm sorry, I didn't mean to be rude. Forgive me?
+		text|Yeah, sure. Better be nicer too me the next time you see me.
+		addpoints|C#|3
+	[end]
+	I enjoy being me. Sorry you don't like me. 
+		text|Wow, okay then. Bye.
+		addpoints|C#|-5
+	[end]
+[end]
+link|\Library\Narrator\Cont.txt

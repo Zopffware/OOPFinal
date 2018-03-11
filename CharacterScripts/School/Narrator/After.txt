@@ -1,0 +1,4 @@
+background|School
+speaker|
+text|The day went by so quickly! At least I've met a couple girls already. 
+link|\School\HTML&JS\FirstEncounter\First.txt

@@ -6,12 +6,16 @@ prompt
 	Could I be of any help?
 		text|If you can find this book for me you'd be a hero.
 		addpoints|C#|5
+		link|\Library\C#\FirstEncounter\SecondGood.txt
 	[end]
 	I bet I can help you. *wink*
 		text|Um, sure. Look for this book. 
+		addpoints|C#|0
+		link|\Library\C#\FirstEncounter\SecondGood.txt
 	[end]
 	Obviously you should be abe to help yourself.
 		text|Obviously you should stay out of other people's business.
 		addpoints|C#|-5
+		link|\Library\C#\FirstEncounter\SecondBad.txt
 	[end]
 [end]

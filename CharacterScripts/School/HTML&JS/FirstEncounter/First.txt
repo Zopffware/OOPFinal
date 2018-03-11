@@ -3,22 +3,27 @@ portrait|JS|L
 portrait|HTML|R
 speaker|HTML
 text|I can't believe you!|
-speakertext|JavaScript|Me?! I can't believe you!
+speakertext|JS|Me?! I can't believe you!
 speakertext|Both|Hey! You! Come here! Which one of us is right?!
 prompt
 	Uh, you? *right*
 		speakertext|HTML|Ha! Told you so! Thank you!
-		addpoints|HTML|1
+		addpoints|HTML|5
+		addpoints|JS|-5
+	link|\School\HTML&JS\FirstEncounter\SecondGood.txt
 	[end]
 	Uh, you? *left*
 		speakertext|JavaScript|Ha! Told you so! Thanks dude.
-		addpoints|JavaScript|1
+		addpoints|JS|5
+		addpoints|HTML|-5
+	link|\School\HTML&JS\FirstEncounter\SecondGood.txt
 	[end]
 	I think you're both pretty. 
 		speakertext|Both|Ugh. Yeah, thanks.
-		addpoints|HTML|-1
-		addpoints|JavaScript|-1
+		addpoints|HTML|-5
+		addpoints|JS|-5
+	link|\School\HTML&JS\FirstEncounter\SecondBad.txt
 	[end]
 [end]
-portrait||R
-link|\Park\C++\FirstEncounter.txt
+
+

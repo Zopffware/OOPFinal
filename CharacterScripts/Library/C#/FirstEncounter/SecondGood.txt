@@ -1,0 +1,20 @@
+speaker|C#
+portrait|C#|L
+background|LibraryBackGround
+prompt
+	Here it is! 
+		text|Oh my gosh! Thank you so much! You're awesome. 
+		addpoints|C#|5
+		link|\Library\C#\FirstEncounter\ThirdGood.txt
+	[end]
+	I found it, but what do I get in return?
+		text|Uh, my gratitude? Can I have the book please?
+		addpoints|C#|-5
+		link|\Library\C#\FirstEncounter\ThirdBad.txt
+	[end]
+	Sorry, I couldn't find it. 
+		text|Oh. Thanks anyways. 
+		addpoints|C#|0
+		link|\Library\C#\FirstEncounter\ThirdGood.txt
+	[end]
+[end]
