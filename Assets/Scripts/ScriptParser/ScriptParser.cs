@@ -145,17 +145,14 @@ public class ScriptParser : MonoBehaviour {
                 case "Java":
                     GameControl.control.JavaLovePoints += addPointsCommand.points;
                     break;
-                case "JS":
-                    GameControl.control.JSLovePoints += addPointsCommand.points;
+                case "JSHTML":
+                    GameControl.control.JSHTMLLovePoints += addPointsCommand.points;
                     break;
                 case "C++":
                     GameControl.control.CPPLovePoints += addPointsCommand.points;
                     break;
                 case "C#":
                     GameControl.control.CSLovePoints += addPointsCommand.points;
-                    break;
-                case "HTML":
-                    GameControl.control.HTMLLovePoints += addPointsCommand.points;
                     break;
                 case "Python":
                     GameControl.control.PYLovePoints += addPointsCommand.points;
