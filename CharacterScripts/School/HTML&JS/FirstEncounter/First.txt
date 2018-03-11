@@ -8,20 +8,17 @@ speakertext|Both|Hey! You! Come here! Which one of us is right?!
 prompt
 	Uh, you? *right*
 		speakertext|HTML|Ha! Told you so! Thank you!
-		addpoints|HTML|5
-		addpoints|JS|-5
+		addpoints|JSHTML|5
 	link|\School\HTML&JS\FirstEncounter\SecondGood.txt
 	[end]
 	Uh, you? *left*
 		speakertext|JavaScript|Ha! Told you so! Thanks dude.
-		addpoints|JS|5
-		addpoints|HTML|-5
+		addpoints|JSHTML|5
 	link|\School\HTML&JS\FirstEncounter\SecondGood.txt
 	[end]
 	I think you're both pretty. 
 		speakertext|Both|Ugh. Yeah, thanks.
-		addpoints|HTML|-5
-		addpoints|JS|-5
+		addpoints|JSHTML|-5
 	link|\School\HTML&JS\FirstEncounter\SecondBad.txt
 	[end]
 [end]
