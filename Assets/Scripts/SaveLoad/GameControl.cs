@@ -90,27 +90,35 @@ public class GameControl : MonoBehaviour
 
     public void changeAmount(int minusMon)
     {
-        if (money >= minusMon)
+        for(int i = 0; i < Inventory.slots.Count; i++)
         {
-            int v = 0;
-            money = money - minusMon;
-            if(minusMon == 750)
+            if (Inventory.items[i].ID == -1)
             {
-                 v = 0;
-            }else if(minusMon ==850)
-            {
-                v = 1;
-            }else if (minusMon == 925)
-            {
-                v = 2;
-            }else if (minusMon == 1000)
-            {
-                v = 3;
-            }else if (minusMon == 800)
-            {
-                v = 4;
+                if (money >= minusMon)
+                {
+                    int v = 0;
+                    money = money - minusMon;
+                    if(minusMon == 750)
+                    {
+                         v = 0;
+                    }else if(minusMon ==850)
+                    {
+                        v = 1;
+                    }else if (minusMon == 925)
+                    {
+                        v = 2;
+                    }else if (minusMon == 1000)
+                    {
+                        v = 3;
+                    }else if (minusMon == 800)
+                    {
+                        v = 4;
+                    }
+                    Inventory.AddItem(v, 1.525879e-05f);
+                    break;
+                }
+
             }
-            Inventory.AddItem(v, 1.525879e-05f);
         }
 
     }
