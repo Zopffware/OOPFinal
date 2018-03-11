@@ -20,3 +20,4 @@ prompt
 		addpoints|JS|-5
 	[end]
 [end]
+link|\School\Narrator\After2.txt

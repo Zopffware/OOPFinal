@@ -1,0 +1,30 @@
+background|HomeBoy
+speaker|
+portrait||L
+text|So, interesting day huh? Who'd you like the most?
+prompt
+	Java
+		addpoints|Java|2
+	link|\Home\Narrator\Endings\Java.txt
+	[end]
+	Python
+		addpoints|Python|2
+	link|\Home\Narrator\Endings\Python.txt
+	[end]
+	C#
+		addpoints|C#|2
+	link|\Home\Narrator\Endings\C#.txt
+	[end]
+	HTML & JS
+		addpoints|HTML|2
+		addpoints|JS|2
+	link|\Home\Narrator\Endings\HTML&JS.txt
+	[end]
+	C++
+		addpoints|C++|2
+	link|\Home\Narrator\Endings\C++.txt
+	[end]
+	No one
+	link|\Home\Narrator\Endings\None.txt
+	[end]
+[end]

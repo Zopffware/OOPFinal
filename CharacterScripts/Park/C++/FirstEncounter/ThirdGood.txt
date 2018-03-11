@@ -1,0 +1,18 @@
+background|ParkBackGround
+portrait|C++|L
+speaker|C++
+prompt
+	So, uh, yeah..
+		text|Ha, have a good day.
+		addpoints|C++|0
+	[end]
+	You're very pretty, and I would be interested in knowing you.
+		text|Oh, a gentleman now are we? Here's my number. Bye bye lover. 
+		addpoints|C++|5
+	[end]
+	Can I get your number?
+		text|Direct. Not bad. Here, call me, like never.
+		addpoints|C++|0
+	[end]
+[end]
+link|\Park\Narrator\Cont.txt

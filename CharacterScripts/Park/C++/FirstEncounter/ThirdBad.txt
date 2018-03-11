@@ -1,0 +1,18 @@
+background|ParkBackGround
+portrait|C++|L
+speaker|C++
+prompt
+	Sorry, just telling it how it is.
+		text|Okay. Buh-bye.
+		addpoints|C++|-5
+	[end]
+	I'm sorry, I didn't mean to be rude.
+		text|Yeah, sure. Goodbye.
+		addpoints|C++|0
+	[end]
+	I'm sorry, can I make it up to you? 
+		text|Hm.. Maybe. Here, my number. Make it up to me sometime.
+		addpoints|C++|5
+	[end]
+[end]
+link|\Park\Narrator\Cont.txt

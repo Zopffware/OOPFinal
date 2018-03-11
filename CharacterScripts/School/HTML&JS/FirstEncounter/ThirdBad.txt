@@ -1,0 +1,22 @@
+background|School
+portrait|JS|L
+portrait|HTML|R
+speaker|HTML
+prompt
+	I'm sorry, can wew start over?
+		speakertext|Both|*look at each other* Yeah we guess so. Here's our number for next time.
+		addpoints|HTML|5
+		addpoints|JS|5
+	[end]
+	Girls are impossible.
+		speakertext|Both|WOW! 
+		addpoints|JS|-5
+		addpoints|HTML|-5
+	[end]
+	Uh, yeah, okay.
+		speakertext|Both|Bye, have a nice day.
+		addpoints|HTML|-5
+		addpoints|JS|-5
+	[end]
+[end]
+link|\School\Narrator\After2.txt

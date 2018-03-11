@@ -1,0 +1,5 @@
+background|ParkBackGround
+portrait||L
+speaker|
+text|Wow! So many pretty girls today! I can't believe my luck!|
+link|\Home\Narrator\End.txt

@@ -1,0 +1,24 @@
+background|School
+portrait|JS|L
+portrait|HTML|R
+speaker|HTML
+prompt
+	I can't say you're both pretty?
+		speakertext|Both|No!
+		addpoints|HTML|5
+		addpoints|JS|-5
+	link|\School\HTML&JS\FirstEncounter\ThirdBad.txt
+	[end]
+	Sorry I said anything.
+		speakertext|Both|Wow, okay then. 
+		addpoints|JS|5
+		addpoints|HTML|-5
+	link|\School\HTML&JS\FirstEncounter\ThirdBad.txt
+	[end]
+	I just don't understand what's going on. 
+		speakertext|Both|Ugh. Yeah, thanks.
+		addpoints|HTML|-5
+		addpoints|JS|-5
+	link|\School\HTML&JS\FirstEncounter\ThirdGood.txt
+	[end]
+[end]

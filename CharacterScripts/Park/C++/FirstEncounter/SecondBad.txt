@@ -1,0 +1,20 @@
+background|ParkBackGround
+portrait|C++|L
+speaker|C++
+prompt
+	You aren't that pretty.
+		text|Wow. Okay. 
+		addpoints|C++|-5
+		link|\Park\C++\FirstEncounter\ThirdBad.txt
+	[end]
+	I-I'm sorry. It just took me off guard.
+		text|That's okay cutie. 
+		addpoints|C++|5
+		link|\Park\C++\FirstEncounter\ThirdGood.txt
+	[end]
+	I've talked to plenty of pretty girls today. 
+		text|Oh really? Okay, babe.
+		addpoints|C++|-5
+		link|\Park\C++\FirstEncounter\ThirdBad.txt
+	[end]
+[end]

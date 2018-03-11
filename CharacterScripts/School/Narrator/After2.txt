@@ -1,0 +1,6 @@
+background|School
+portrait||L
+portrait||R
+speaker|
+text|Wow, twins! And they seemed interested in me! This day can't get any better! Good time to head home. 
+link|\Park\C++\FirstEncounter\First.txt

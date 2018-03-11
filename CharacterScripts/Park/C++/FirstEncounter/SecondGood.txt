@@ -1,0 +1,20 @@
+background|ParkBackGround
+portrait|C++|L
+speaker|C++
+prompt
+	You're welcome. Is there a reason why you're just here in the park?
+		text|Just enjoying the day.
+		addpoints|C++|5
+		link|\Park\C++\FirstEncounter\ThirdGood.txt
+	[end]
+	You're welcome pretty thang.
+		text|Ha. You're funny.  
+		addpoints|C++|0
+		link|\Park\C++\FirstEncounter\ThirdGood.txt
+	[end]
+	Cool, do I get money now?
+		text|HA! As if!
+		addpoints|C++|-5
+		link|\Park\C++\FirstEncounter\ThirdBad.txt
+	[end]
+[end]

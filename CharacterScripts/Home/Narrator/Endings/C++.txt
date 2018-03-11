@@ -1,0 +1,6 @@
+background|
+portrait||L
+speaker| 
+textblock
+	Well, you proceed to woo C++, going on dates, buying gifts. You later marry and have lots of babies. Congrats! You finished our demo!
+[end]
