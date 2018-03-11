@@ -125,8 +125,13 @@ public class ScriptParser : MonoBehaviour {
 
         } else if (command.GetType().Equals(typeof(BackgroundCommand))) {                           //background
             BackgroundCommand backgroundCommand = (BackgroundCommand)command;
-            GameObject.Find("Background").GetComponentInChildren<Image>().sprite =
-                    Resources.Load<Sprite>("Backgrounds\\" + backgroundCommand.name);
+            Image background = GameObject.Find("Background").GetComponentInChildren<Image>();
+            if (backgroundCommand.name.Equals("")) {
+                background.color = Color.black;
+            } else {
+                background.color = Color.white;
+                background.sprite = Resources.Load<Sprite>("Backgrounds\\" + backgroundCommand.name);
+            }
             advanceScript();
 
         } else if (command.GetType().Equals(typeof(LinkCommand))) {                                 //link
