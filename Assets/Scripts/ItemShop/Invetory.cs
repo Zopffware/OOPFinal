@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Invetory : MonoBehaviour {
-
+    
     GameObject invetoryPanel;
     GameObject slotPanel;
     ItemDataBase dataBase;
@@ -24,8 +24,8 @@ public class Invetory : MonoBehaviour {
         slotPanel = invetoryPanel.transform.Find("Slot Panel").gameObject;
         for(int i = 0; i < slotAmount; i++)
         {
-            items.Add(new Item());
             slots.Add(Instantiate(inventorySlot));
+            items.Add(new Item());
             slots[i].transform.SetParent(slotPanel.transform);
         }
             GameControl.control.inventory.SetActive(false);
@@ -45,6 +45,7 @@ public class Invetory : MonoBehaviour {
                 GameObject itemObj = Instantiate(inventoryItem);
                 itemObj.transform.SetParent(slots[i].transform);
                 itemObj.transform.position = Vector2.zero;
+
                 itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
                 Debug.Log("yesa");
                 break;
@@ -54,6 +55,10 @@ public class Invetory : MonoBehaviour {
     }
     public void RemoveItem()
     {
+        
+        
+            
 
+        
     }
 }

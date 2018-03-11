@@ -114,6 +114,10 @@ public class GameControl : MonoBehaviour
         }
 
     }
+    public void itemUse()
+    {
+        Inventory.RemoveItem();
+    }
 
     private void Update()
     {
