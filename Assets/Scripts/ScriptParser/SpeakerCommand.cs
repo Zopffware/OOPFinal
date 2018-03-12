@@ -1,4 +1,7 @@
-﻿public class SpeakerCommand : ICommand {
+﻿using System;
+
+[Serializable]
+public class SpeakerCommand : ICommand {
     public readonly string speaker;
 
     public SpeakerCommand(string speaker) {
