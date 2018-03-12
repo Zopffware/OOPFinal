@@ -1,7 +1,6 @@
 background|School
 portrait|JS|L
 portrait|HTML|R
-speaker|HTML
 prompt
 	I think you're both really pretty, and you're both right.
 		speakertext|Both|*roll their eyes* Yeah, thanks. 

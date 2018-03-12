@@ -1,7 +1,6 @@
 background|School
 portrait|JS|L
 portrait|HTML|R
-speaker|HTML
 prompt
 	I'm sorry, can we start over?
 		speakertext|Both|*look at each other* Yeah we guess so. Here's our number for next time.

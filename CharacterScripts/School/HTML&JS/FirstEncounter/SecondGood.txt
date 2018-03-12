@@ -1,7 +1,6 @@
 background|School
 portrait|JS|L
 portrait|HTML|R
-speaker|HTML
 prompt
 	I don't know what I was exactly deciding on.
 		speakertext|HTML|Nothing important.

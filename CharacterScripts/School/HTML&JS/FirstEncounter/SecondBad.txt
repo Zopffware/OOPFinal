@@ -1,7 +1,6 @@
 background|School
 portrait|JS|L
 portrait|HTML|R
-speaker|HTML
 prompt
 	I can't say you're both pretty?
 		speakertext|Both|No!

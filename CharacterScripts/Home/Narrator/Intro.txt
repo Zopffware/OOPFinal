@@ -4,7 +4,7 @@ portrait||L
 textblock
 	Welcome to I &#x2764; Code!
 	You are a new college student going to a tech college!
-	Tomorrow is the first day of school, and you're hoping to meet some cute people
+	Tomorrow is the first day of school, and you're hoping to meet some cute people.
 [end]
 textblock
 	You can hit esc. to bring up the pause menu!
