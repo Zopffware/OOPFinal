@@ -227,7 +227,7 @@ public class ScriptParser : MonoBehaviour {
             }
             if (GameControl.control.JSHTMLLovePoints >= 15) {
                 List<ICommand> commandList = new List<ICommand>();
-                commandList.Add(new LinkCommand("\\Home\\Narrator\\Endings\\HTMLJS.txt"));
+                commandList.Add(new LinkCommand("\\Home\\Narrator\\Endings\\HTML&JS.txt"));
                 promptCommand.addConsequences("HTML & JS", commandList);
             }
             if (GameControl.control.CPPLovePoints >= 15) {
