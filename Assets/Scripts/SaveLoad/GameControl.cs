@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.IO;
-
+using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
@@ -120,9 +120,9 @@ public class GameControl : MonoBehaviour
         }
 
     }
-    public void itemUse()
+    public void itemUse(int a)
     {
-        Inventory.RemoveItem();
+        Inventory.RemoveItem(a);
     }
 
     private void Update()

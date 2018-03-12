@@ -10,6 +10,7 @@ public class Invetory : MonoBehaviour {
     ItemDataBase dataBase;
     public GameObject inventorySlot;
     public GameObject inventoryItem;
+    public Sprite back;
     Vector2 vector = new Vector2(0, 1.525879e-05f);
 
      int slotAmount;
@@ -56,9 +57,52 @@ public class Invetory : MonoBehaviour {
         }
 
     }
-    public void RemoveItem()
+    public void RemoveItem( int b)
     {
-        
+        if(GameObject.Find("LeftPortrait").GetComponentInChildren<Image>().sprite.name!=null)
+        {
+            int lp = items[b].Lovepoints;
+            string namne = GameObject.Find("LeftPortrait").GetComponentInChildren<Image>().sprite.name;
+
+            Debug.Log(namne);
+            switch (namne)
+            {
+                
+                
+                case "JavaGirl":
+                    GameControl.control.JavaLovePoints += lp;
+                    Debug.Log(lp);
+                    break;
+                case "C#Girl":
+                    GameControl.control.CSLovePoints += lp;
+                    Debug.Log(lp);
+                    break;
+                case "C++Girl":
+                    GameControl.control.CPPLovePoints += lp;
+                    Debug.Log(lp);
+                    break;
+                case "PythonGirl":
+                    GameControl.control.PYLovePoints += lp;
+                    Debug.Log(lp);
+                    break;
+                case "JSGirl":
+                    GameControl.control.JSHTMLLovePoints += lp;
+                    Debug.Log(lp);
+                    break;
+                default:
+                    Debug.Log("nope");
+                    break;
+
+            }
+            items[b] = new Item();
+
+            Image a = slots[b].transform.Find("Item 1").GetComponent<Image>();
+
+
+            a.GetComponent<Image>().sprite = back;
+            
+            Debug.Log("yesa");
+        }
         
             
 
