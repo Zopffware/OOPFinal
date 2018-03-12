@@ -15,8 +15,7 @@ public class GameControl : MonoBehaviour
     public bool shop = false;
     public bool invt = false;
 
-    public int JSLovePoints;
-    public int HTMLLovePoints;
+    public int JSHTMLLovePoints;
     public int JavaLovePoints;
     public int PYLovePoints;
     public int CSLovePoints;
@@ -52,8 +51,7 @@ public class GameControl : MonoBehaviour
         FileStream file = File.Create(Application.persistentDataPath + "/playerInfo.dat");
 
         PlayerData data = new PlayerData();
-        data.JSLovePoints = JSLovePoints;
-        data.HTMLLovePoints = HTMLLovePoints;
+        data.JSHTMLLovePoints = JSHTMLLovePoints;
         data.PYLovePoints = PYLovePoints;
         data.JavaLovePoints = JavaLovePoints;
         data.CSLovePoints = CSLovePoints;
@@ -76,8 +74,8 @@ public class GameControl : MonoBehaviour
             PlayerData data = (PlayerData)bf.Deserialize(file);
             file.Close();
 
-            JSLovePoints = data.JSLovePoints;
-            HTMLLovePoints = data.HTMLLovePoints;
+            
+            JSHTMLLovePoints = data.JSHTMLLovePoints;
             PYLovePoints = data.PYLovePoints;
             JavaLovePoints = data.JavaLovePoints;
             CSLovePoints = data.CSLovePoints;
@@ -180,8 +178,8 @@ public class GameControl : MonoBehaviour
 [Serializable]
 class PlayerData
 {
-    public int JSLovePoints;
-    public int HTMLLovePoints;
+    
+    public int JSHTMLLovePoints;
     public int JavaLovePoints;
     public int PYLovePoints;
     public int CSLovePoints;

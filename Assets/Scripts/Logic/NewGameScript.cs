@@ -23,8 +23,7 @@ public class NewGameScript : MonoBehaviour {
         Vector3 pos = new Vector3(0, 0, 0);
         Destroy(menuPrefab);
         GameControl.control.money = 1000;
-        GameControl.control.JSLovePoints = 0;
-        GameControl.control.HTMLLovePoints = 0;
+        GameControl.control.JSHTMLLovePoints = 0;
         GameControl.control.CPPLovePoints = 0;
         GameControl.control.CSLovePoints = 0;
         GameControl.control.PYLovePoints = 0;
