@@ -221,39 +221,35 @@ public class ScriptParser : MonoBehaviour {
             FinalCheckCommand finalCheckCommand = (FinalCheckCommand)command;
             PromptCommand promptCommand = new PromptCommand();
             if (GameControl.control.JavaLovePoints >= 15) {
-                promptCommand.addChoice("Java");
                 List<ICommand> commandList = new List<ICommand>();
                 commandList.Add(new LinkCommand("\\Home\\Narrator\\Endings\\Java.txt"));
                 promptCommand.addConsequences("Java", commandList);
             }
             if (GameControl.control.JSHTMLLovePoints >= 15) {
-                promptCommand.addChoice("HTML & JS");
                 List<ICommand> commandList = new List<ICommand>();
                 commandList.Add(new LinkCommand("\\Home\\Narrator\\Endings\\HTMLJS.txt"));
                 promptCommand.addConsequences("HTML & JS", commandList);
             }
             if (GameControl.control.CPPLovePoints >= 15) {
-                promptCommand.addChoice("C++");
                 List<ICommand> commandList = new List<ICommand>();
                 commandList.Add(new LinkCommand("\\Home\\Narrator\\Endings\\C++.txt"));
                 promptCommand.addConsequences("C++", commandList);
             }
             if (GameControl.control.CSLovePoints >= 15) {
-                promptCommand.addChoice("C#");
                 List<ICommand> commandList = new List<ICommand>();
                 commandList.Add(new LinkCommand("\\Home\\Narrator\\Endings\\C#.txt"));
                 promptCommand.addConsequences("C#", commandList);
             }
             if (GameControl.control.PYLovePoints >= 15) {
-                promptCommand.addChoice("Python");
                 List<ICommand> commandList = new List<ICommand>();
                 commandList.Add(new LinkCommand("\\Home\\Narrator\\Endings\\Python.txt"));
                 promptCommand.addConsequences("Python", commandList);
             }
-            promptCommand.addChoice("None");
             List<ICommand> noneCommandList = new List<ICommand>();
             noneCommandList.Add(new LinkCommand("\\Home\\Narrator\\Endings\\None.txt"));
             promptCommand.addConsequences("None", noneCommandList);
+            currentScript.Insert(commandIndex, promptCommand);
+            advanceScript();
         }
     }
     public static void readScript(string filename) {
