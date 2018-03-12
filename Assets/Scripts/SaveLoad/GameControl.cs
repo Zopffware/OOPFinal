@@ -31,7 +31,6 @@ public class GameControl : MonoBehaviour
         Inventory = FindObjectOfType<Invetory>();
         if (control == null)
         {
-            DontDestroyOnLoad(gameObject);
             control = this;
         }
         else if (control != this)
