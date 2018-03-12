@@ -2654,7 +2654,7 @@ Prefab:
     - target: {fileID: 224605303640860566, guid: 6b4caa1e32bbb8d4dad42d261d1729f1,
         type: 2}
       propertyPath: m_AnchoredPosition.y
-      value: -1
+      value: -1.0000019
       objectReference: {fileID: 0}
     - target: {fileID: 224324011046895102, guid: 6b4caa1e32bbb8d4dad42d261d1729f1,
         type: 2}
@@ -2763,7 +2763,6 @@ GameObject:
   - component: {fileID: 940723995}
   - component: {fileID: 940723994}
   - component: {fileID: 940723993}
-  - component: {fileID: 940723992}
   m_Layer: 0
   m_Name: Store
   m_TagString: Untagged
@@ -2771,17 +2770,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 0
---- !u!114 &940723992
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 940723991}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2807bec462e3fd240985a273590b456a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &940723993
 MonoBehaviour:
   m_ObjectHideFlags: 0
