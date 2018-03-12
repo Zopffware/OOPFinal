@@ -5,9 +5,6 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScriptParser : MonoBehaviour {
-    private static string currentSpeaker = "";
-    private static int commandIndex = 0;
-    private static List<ICommand> currentScript = new List<ICommand>();
     private static bool isPrompting = false;
 
     public static List<ICommand> parse(string script) {
@@ -100,7 +97,7 @@ public class ScriptParser : MonoBehaviour {
     public static void executeCommand(ICommand command) {
         if (command.GetType().Equals(typeof(SpeakerCommand))) {                                     //speaker
             SpeakerCommand speakerCommand = (SpeakerCommand)command;
-            currentSpeaker = speakerCommand.speaker;
+            GameControl.control.speaker = speakerCommand.speaker;
             GameObject speakerBox = GameObject.Find("Speaker");
             Text speakerText = speakerBox.GetComponentInChildren<Text>();
             Image speakerImage = speakerBox.GetComponentInChildren<Image>();
@@ -117,10 +114,12 @@ public class ScriptParser : MonoBehaviour {
         } else if (command.GetType().Equals(typeof(TextCommand))) {                                 //text
             TextCommand textCommand = (TextCommand)command;
             GameObject.Find("Dialogue").GetComponentInChildren<Text>().text = textCommand.text;
+            GameControl.control.text = textCommand.text;
 
         } else if (command.GetType().Equals(typeof(PortraitCommand))) {                             //portrait
             PortraitCommand portraitCommand = (PortraitCommand)command;
             Image portrait = GameObject.Find(portraitCommand.side == 'L' ? "LeftPortrait" : "RightPortrait").GetComponentInChildren<Image>();
+            GameControl.control.portraits[portraitCommand.side == 'L' ? 0 : 1] = portraitCommand.character;
             if (portraitCommand.character.Equals("")) {
                 portrait.color = Color.clear;
             } else {
@@ -132,6 +131,7 @@ public class ScriptParser : MonoBehaviour {
         } else if (command.GetType().Equals(typeof(BackgroundCommand))) {                           //background
             BackgroundCommand backgroundCommand = (BackgroundCommand)command;
             Image background = GameObject.Find("Background").GetComponentInChildren<Image>();
+            GameControl.control.background = backgroundCommand.name;
             if (backgroundCommand.name.Equals("")) {
                 background.color = Color.black;
             } else {
@@ -183,7 +183,7 @@ public class ScriptParser : MonoBehaviour {
                     foreach (GameObject button in promptButtons) {
                         Destroy(button);
                     }
-                    currentScript.InsertRange(commandIndex, promptCommand.getConsequences(choice));
+                    GameControl.control.currentScript.InsertRange(GameControl.control.commandIndex, promptCommand.getConsequences(choice));
                     advanceScript();
                 });
                 i++;
@@ -248,7 +248,7 @@ public class ScriptParser : MonoBehaviour {
             List<ICommand> noneCommandList = new List<ICommand>();
             noneCommandList.Add(new LinkCommand("\\Home\\Narrator\\Endings\\None.txt"));
             promptCommand.addConsequences("None", noneCommandList);
-            currentScript.Insert(commandIndex, promptCommand);
+            GameControl.control.currentScript.Insert(GameControl.control.commandIndex, promptCommand);
             advanceScript();
         }
     }
@@ -256,8 +256,8 @@ public class ScriptParser : MonoBehaviour {
         try {
             using (StreamReader sr = new StreamReader((filename.StartsWith("C:\\") || filename.StartsWith("/"))
                     ? filename : "CharacterScripts\\" + filename)) {
-                currentScript = parse(sr.ReadToEnd());
-                commandIndex = 0;
+                GameControl.control.currentScript = parse(sr.ReadToEnd());
+                GameControl.control.commandIndex = 0;
             }
         } catch (Exception e) {
             Debug.Log("The file could not be read:");
@@ -267,19 +267,12 @@ public class ScriptParser : MonoBehaviour {
 
     public static void advanceScript() {
         if (!isPrompting) {
-            if (commandIndex >= currentScript.Count) {
+            if (GameControl.control.commandIndex >= GameControl.control.currentScript.Count) {
                 Debug.Log("The script has finished.");
             } else {
-                executeCommand(currentScript[commandIndex++]);
+                executeCommand(GameControl.control.currentScript[GameControl.control.commandIndex++]);
             }
         }
-    }
-
-    public static List<ICommand> getCurrentScript() {
-        return currentScript;
-    }
-    public static int getCommandIndex() {
-        return commandIndex;
     }
 
 	/*public static void oldParse(string script) {

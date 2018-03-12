@@ -1,1 +1,4 @@
-﻿public class FinalCheckCommand : ICommand { }
+﻿using System;
+
+[Serializable]
+public class FinalCheckCommand : ICommand { }

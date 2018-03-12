@@ -1,4 +1,7 @@
-﻿public class LinkCommand : ICommand {
+﻿using System;
+
+[Serializable]
+public class LinkCommand : ICommand {
     public readonly string fileName;
     
     public LinkCommand(string fileName) {
