@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class currentMoney : MonoBehaviour {
     public Text countText;
-
+    
 	// Use this for initialization
 	void Start () {
 		 int cm = GameControl.control.money;
@@ -13,11 +13,12 @@ public class currentMoney : MonoBehaviour {
         countText.text="ByteCoin: "+cm.ToString ();
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    private void Update()
+    {
         int cm = GameControl.control.money;
-       countText.text = "ByteCoin: " + cm.ToString();
-            
-	}
+
+        countText.text = "ByteCoin: " + cm.ToString();
+    }
 }

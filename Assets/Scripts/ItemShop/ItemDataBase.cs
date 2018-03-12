@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using LitJson;
 using System.IO;
+using System.Runtime.Serialization.Formatters.Binary;
+using System;
 
 public class ItemDataBase : MonoBehaviour {
     private List<Item> dataBase = new List<Item>();
@@ -37,7 +39,7 @@ public class ItemDataBase : MonoBehaviour {
         }
     }
 }
-
+[Serializable]
 public class Item
 {
     public int ID { get; set; }
@@ -46,8 +48,11 @@ public class Item
     public int Lovepoints { get; set; }
     public string Description { get; set; }
     public string slug { get; set; }
-    public Sprite Sprite { get; set; }
-
+   
+    public Sprite getSprite()
+    {
+        return Resources.Load<Sprite>( "Sprites"+ slug);
+    }
 
 
     public Item(int id , string title, int value,int lovepoints, string description,string slug)
@@ -57,7 +62,6 @@ public class Item
         this.Value = value;
         this.Lovepoints = lovepoints;
         this.Description = description;
-        this.Sprite = Resources.Load<Sprite>("Sprites/"+ slug);
     }
     public Item()
     {

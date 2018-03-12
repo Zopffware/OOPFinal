@@ -25,6 +25,7 @@ public class GameControl : MonoBehaviour
     public int hour;
     public int commandIndex;
     public List<ICommand> currentScript;
+    
     Invetory Inventory;
     void Awake()
     {
@@ -58,7 +59,13 @@ public class GameControl : MonoBehaviour
         data.money = money;
         data.day = day;
         data.hour = hour;
+        data.currentScript = currentScript;
+
+        Debug.Log(Inventory.items);
+        data.items = Inventory.items;
         
+
+
 
         bf.Serialize(file, data);
         file.Close();
@@ -82,6 +89,11 @@ public class GameControl : MonoBehaviour
             money = data.money;
             day = data.day;
             hour = data.hour;
+            currentScript = data.currentScript;
+
+            Debug.Log(data.items);
+                Inventory.items = data.items;
+            
         }
     }
 
@@ -186,6 +198,9 @@ class PlayerData
     public int money;
     public int day;
     public int hour;
+    public List<ICommand> currentScript;
+    public List<GameObject> slots = new List<GameObject>( 9);
+    public List<Item> items = new List<Item>(9);
 }
 
 //GameControl.control.money += x;

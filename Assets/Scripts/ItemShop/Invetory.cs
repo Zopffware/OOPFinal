@@ -14,7 +14,9 @@ public class Invetory : MonoBehaviour {
     Vector2 vector = new Vector2(0, 1.525879e-05f);
 
      int slotAmount;
+    
     public List<Item> items = new List<Item>();
+
     public List<GameObject> slots = new List<GameObject>();
 
      void Start()
@@ -49,7 +51,12 @@ public class Invetory : MonoBehaviour {
                 Image a = slots[i].transform.Find("Item 1").GetComponent<Image>();
 
 
-                a.GetComponent<Image>().sprite = itemToAdd.Sprite;
+                a.GetComponent<Image>().sprite = itemToAdd.getSprite();
+                
+                        
+                        
+              
+
                 a.transform.SetParent(slots[i].transform);
                 Debug.Log("yesa");
                 break;
