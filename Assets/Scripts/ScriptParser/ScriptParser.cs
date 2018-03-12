@@ -83,6 +83,9 @@ public class ScriptParser : MonoBehaviour {
                         case Command.PROMPT:
                             prompt = true;
                             break;
+                        case Command.DATECHECK:
+                            commands.Add(new DateCheckCommand(lineData[1]));
+                            break;
                     }
                 }
             }
@@ -181,6 +184,35 @@ public class ScriptParser : MonoBehaviour {
                     advanceScript();
                 });
                 i++;
+            }
+        } else if (command.GetType().Equals(typeof(DateCheckCommand))) {
+            DateCheckCommand dateCheckCommand = (DateCheckCommand)command;
+            switch (dateCheckCommand.character) {
+                case "Java":
+                    if (GameControl.control.JavaLovePoints >= 15) {
+                        //date start
+                    }
+                    break;
+                case "JSHTML":
+                    if (GameControl.control.JSHTMLLovePoints >= 15) {
+                        //date start
+                    }
+                    break;
+                case "C++":
+                    if (GameControl.control.CPPLovePoints >= 15) {
+                        //date start
+                    }
+                    break;
+                case "C#":
+                    if (GameControl.control.CSLovePoints >= 15) {
+                        //date start
+                    }
+                    break;
+                case "Python":
+                    if (GameControl.control.PYLovePoints >= 15) {
+                        //date start
+                    }
+                    break;
             }
         }
     }
@@ -307,6 +339,7 @@ public class ScriptParser : MonoBehaviour {
         LINK,
         PORTRAIT,
         BACKGROUND,
-        ADDPOINTS
+        ADDPOINTS,
+        DATECHECK
     }
 }
