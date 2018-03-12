@@ -23,17 +23,9 @@ public class GameControl : MonoBehaviour
     public int money;
     public int day;
     public int hour;
-
     public int commandIndex;
     public List<ICommand> currentScript;
     
-    public int commandIndex = 0;
-    public string speaker = "";
-    public string text = "";
-    public string background = "";
-    public string[] portraits = {"", ""};
-    public List<ICommand> currentScript = new List<ICommand>();
-
     Invetory Inventory;
     void Awake()
     {
@@ -67,17 +59,10 @@ public class GameControl : MonoBehaviour
         data.money = money;
         data.day = day;
         data.hour = hour;
-
         data.currentScript = currentScript;
 
         Debug.Log(Inventory.items);
         data.items = Inventory.items;
-
-        data.background = background;
-        data.text = text;
-        data.portraits = portraits;
-        data.speaker = speaker;
-
         
 
 
@@ -104,26 +89,11 @@ public class GameControl : MonoBehaviour
             money = data.money;
             day = data.day;
             hour = data.hour;
-
             currentScript = data.currentScript;
 
             Debug.Log(data.items);
                 Inventory.items = data.items;
             
-            background = data.background;
-            text = data.text;
-            portraits = data.portraits;
-            speaker = data.speaker;
-
-            List<ICommand> setup = new List<ICommand>();
-            setup.Add(new BackgroundCommand(background));
-            setup.Add(new PortraitCommand(portraits[0], 'L'));
-            setup.Add(new PortraitCommand(portraits[1], 'R'));
-            setup.Add(new SpeakerCommand(speaker));
-            setup.Add(new TextCommand(text));
-            currentScript.InsertRange(commandIndex, setup);
-            ScriptParser.advanceScript();
-
         }
     }
 
@@ -228,17 +198,9 @@ class PlayerData
     public int money;
     public int day;
     public int hour;
-
     public List<ICommand> currentScript;
     public List<GameObject> slots = new List<GameObject>( 9);
     public List<Item> items = new List<Item>(9);
-
-    public string speaker;
-    public string text;
-    public string background;
-    public string[] portraits = new string[2];
-    public List<ICommand> currentScript;
-
 }
 
 //GameControl.control.money += x;

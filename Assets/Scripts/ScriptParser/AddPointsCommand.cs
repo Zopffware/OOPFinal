@@ -1,7 +1,4 @@
-﻿using System;
-
-[Serializable]
-public class AddPointsCommand : ICommand {
+﻿public class AddPointsCommand : ICommand {
     public readonly string character;
     public readonly int points;
 

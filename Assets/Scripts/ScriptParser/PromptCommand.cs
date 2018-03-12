@@ -1,7 +1,5 @@
 ﻿using System.Collections.Generic;
-using System;
 
-[Serializable]
 public class PromptCommand : ICommand {
     private Dictionary<string, List<ICommand>> choices = new Dictionary<string, List<ICommand>>();
 

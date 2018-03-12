@@ -1,7 +1,4 @@
-﻿using System;
-
-[Serializable]
-public class TextCommand : ICommand {
+﻿public class TextCommand : ICommand {
     public readonly string text;
 
     public TextCommand(string text) {

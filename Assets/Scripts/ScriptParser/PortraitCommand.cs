@@ -1,6 +1,5 @@
 ﻿using System;
 
-[Serializable]
 public class PortraitCommand : ICommand {
     public readonly string character;
    // public readonly string poseName;
