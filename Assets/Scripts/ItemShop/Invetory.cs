@@ -24,12 +24,12 @@ public class Invetory : MonoBehaviour {
         slotPanel = invetoryPanel.transform.Find("Slot Panel").gameObject;
         for(int i = 0; i < slotAmount; i++)
         {
-            slots.Add(Instantiate(inventorySlot));
+            
             items.Add(new Item());
-            slots[i].transform.SetParent(slotPanel.transform);
+            
         }
             GameControl.control.inventory.SetActive(false);
-        
+
     }
 
     public void AddItem(int id, float test)
@@ -42,11 +42,14 @@ public class Invetory : MonoBehaviour {
             {
 
                 items[i] = itemToAdd;
-                GameObject itemObj = Instantiate(inventoryItem);
-                itemObj.transform.SetParent(slots[i].transform);
-                itemObj.transform.position = Vector2.zero;
+                
+                //GameObject itemObj = itemObjj.GetComponentInChildren<GameObject>();
+              
+                Image a = slots[i].transform.Find("Item 1").GetComponent<Image>();
 
-                itemObj.GetComponent<Image>().sprite = itemToAdd.Sprite;
+
+                a.GetComponent<Image>().sprite = itemToAdd.Sprite;
+                a.transform.SetParent(slots[i].transform);
                 Debug.Log("yesa");
                 break;
             }
