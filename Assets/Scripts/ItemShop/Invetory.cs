@@ -37,7 +37,7 @@ public class Invetory : MonoBehaviour {
     {
         Vector2 vector = new Vector2(0, test);
         Item itemToAdd = dataBase.FecthItemByID(id);
-        for(int i =0;i< items.Count; i++)
+        for(int i =0;i<items.Count; i++)
         {
             if (items[i].ID == -1)
             {
@@ -49,7 +49,7 @@ public class Invetory : MonoBehaviour {
                 Image a = slots[i].transform.Find("Item 1").GetComponent<Image>();
 
 
-                a.GetComponent<Image>().sprite = itemToAdd.Sprite;
+                a.GetComponent<Image>().sprite = itemToAdd.getSprite();
                 a.transform.SetParent(slots[i].transform);
                 Debug.Log("yesa");
                 break;

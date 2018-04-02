@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 public class GameControl : MonoBehaviour
 {
-    
+    public GameObject menuPrefab, basePrefab;
+
     public static GameControl control;
     public GameObject menu, store, inventory;
     public bool pause = false;
@@ -66,7 +67,9 @@ public class GameControl : MonoBehaviour
         data.text = text;
         data.portraits = portraits;
         data.speaker = speaker;
-        
+        data.currentScript = currentScript;
+        data.commandIndex = commandIndex;
+        data.items = Inventory.items;
 
         bf.Serialize(file, data);
         file.Close();
@@ -94,6 +97,17 @@ public class GameControl : MonoBehaviour
             text = data.text;
             portraits = data.portraits;
             speaker = data.speaker;
+            currentScript = data.currentScript;
+            commandIndex = data.commandIndex;
+            Inventory.items = data.items;
+            for(int i = 0; i < 9; i++) {
+                Image a = Inventory.slots[i].transform.Find("Item 1").GetComponent<Image>();
+                if (Inventory.items[i].ID != -1) {
+                    a.GetComponent<Image>().sprite = Inventory.items[i].getSprite();
+                } else {
+
+                }
+            }
 
             List<ICommand> setup = new List<ICommand>();
             setup.Add(new BackgroundCommand(background));
@@ -101,7 +115,11 @@ public class GameControl : MonoBehaviour
             setup.Add(new PortraitCommand(portraits[1], 'R'));
             setup.Add(new SpeakerCommand(speaker));
             setup.Add(new TextCommand(text));
+            commandIndex--;
             currentScript.InsertRange(commandIndex, setup);
+            
+            Instantiate(basePrefab, Vector3.zero, Quaternion.identity);
+            ScriptParser.advanceScript();
             ScriptParser.advanceScript();
         }
     }
@@ -149,17 +167,16 @@ public class GameControl : MonoBehaviour
     {
         if (Input.GetKeyDown("escape"))
         {
-            if (pause == true)
-            {
-                Time.timeScale = 0.0f;
-                pause = false;
-                menu.SetActive(false);
-            }
-            else
-            {
-                Time.timeScale = 1.0f;
-                pause = true;
-                menu.SetActive(true);
+            if (menuPrefab == null) {
+                if (pause == true) {
+                    Time.timeScale = 0.0f;
+                    pause = false;
+                    menu.SetActive(false);
+                } else {
+                    Time.timeScale = 1.0f;
+                    pause = true;
+                    menu.SetActive(true);
+                }
             }
         }
         if (Input.GetKeyDown("s"))
@@ -211,7 +228,10 @@ class PlayerData
     public string text;
     public string background;
     public string[] portraits = new string[2];
+    public List<GameObject> slots = new List<GameObject>(9);
+    public List<Item> items = new List<Item>(9);
     public List<ICommand> currentScript;
+    public int commandIndex;
 }
 
 //GameControl.control.money += x;
